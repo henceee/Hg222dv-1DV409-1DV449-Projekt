@@ -1,0 +1,23 @@
+﻿{
+	"geonames":
+	[
+		{
+			"adminCode1":"SG",
+			"lng":"9.01488",
+			"distance":"1.1379",
+			"geonameId":7910950,
+			"toponymName":"Chrüzegg",
+			"countryId":"2658434",
+			"fcl":"P",
+			"population":0,
+			"countryCode":"CH",
+			"name":"Chrüzegg",
+			"fclName":"city, village,...",
+			"countryName":"Switzerland",
+			"fcodeName":"section of populated place",
+			"adminName1":"Saint Gallen",
+			"lat":"47.2985",
+			"fcode":"PPLX"
+		}
+	]
+}
