@@ -1,32 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
+using WeatherMashup.Domain.Datamodels.WeatherMashup;
 using WeatherMashup.Domain.DataModels;
 
+
+
 namespace WeatherMashup.Domain.WebServices
-{ 
-    
+{    
 
     public class WeatherWebService
     {
         public IEnumerable<WeatherModel> getWeather(LocationModel location)
         {
-
-            string uri = "http://www.yr.no/place/{location.Country}/{location.CityName}/{location.CityName}/forecast.xml";
-
-            var request = (HttpWebRequest)WebRequest.Create(uri);
-
-            #region testdata
-
+            
+            string uriString = string.Format("http://www.yr.no/place/{0}/{1}/{1}/forecast.xml",
+                                            location.Country,location.CityName,location.CityName);
             string rawXML = string.Empty;
-            WeatherModel weather = new WeatherModel();
-         
 
+            /*var request = (HttpWebRequest)WebRequest.Create(uriString);
+            request.Method = "GET";            
+            
            /* using (var response = request.GetResponse())
             using (var reader = new StreamReader(response.GetResponseStream()))*/
             using (var reader = new StreamReader(HttpContext.Current.Server.MapPath
@@ -37,20 +37,30 @@ namespace WeatherMashup.Domain.WebServices
 
             var doc = XDocument.Parse(rawXML);
 
-            var model = (from time in doc.Descendants("time")
-                         select new WeatherModel
-                         {
-                            //public int SymbolNumber { get; set; }
-                            //public double Temperature { get; set; }
-                            //public double PrecipitationMinValue { get; set; }
-                            //public double PrecipitationMaxValue { get; set; }
-                            //public DateTime Time { get; set; }
 
+            try
+            {
+                var model = (from time in doc.Descendants("time")
+                             select new WeatherModel
+                             {
+                                 Date = DateTime.ParseExact(time.Attribute("to").Value,
+                                                            "ddd MMM dd", CultureInfo.InvariantCulture),
+                                 Period = int.Parse(time.Attribute("period").Value),
+                                 SymbolNumber = int.Parse(time.Element("symbol").Attribute("number").Value),
+                                 Precipitation = double.Parse(time.Element("precipitation").Attribute("value").Value),
+                                 Temperature = double.Parse(time.Element("temperature").Attribute("value").Value),
+                                 TempUnit = time.Element("temperature").Attribute("unit").Value,
 
-                         }).ToList();
+                             }).ToList();
 
-            return model;
-            #endregion
+                return model;
+            }
+            catch (Exception)
+            {
+                
+                throw new ApplicationException("Internal error handling weather data.");
+            }
+            
             
         }
     }

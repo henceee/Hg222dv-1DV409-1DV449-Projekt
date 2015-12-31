@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherMashup", "WeatherMashup\WeatherMashup.csproj", "{E3763545-F389-4730-A701-93CA436F8603}"
+	ProjectSection(ProjectDependencies) = postProject
+		{725BC61A-9411-42DF-8A01-48351D413830} = {725BC61A-9411-42DF-8A01-48351D413830}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeatherMashup.Domain", "WeatherMashup.Domain\WeatherMashup.Domain.csproj", "{725BC61A-9411-42DF-8A01-48351D413830}"
 EndProject

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Web;
 using WeatherMashup.Domain.DataModels;
 
-namespace WeatherMashup.Domain
+namespace WeatherMashup.Domain.Datamodels.WeatherMashup
 {
     
     public class LocationModel
@@ -14,18 +14,19 @@ namespace WeatherMashup.Domain
 
         public LocationModel(JToken LocationToken)
         {
-            Lat = LocationToken["geonames"]["lat"].ToString();
-            Lng = LocationToken["geonames"]["lng"].ToString();
-            CityName = LocationToken["geonames"]["name"].ToString();            
-            Country = LocationToken["geonames"]["countryName"].ToString();
-
+            Lat = LocationToken["lat"].ToString();
+            Lng = LocationToken["lng"].ToString();
+            CityName = LocationToken["name"].ToString();            
+            Country = LocationToken["countryName"].ToString();
+            ID = GetHashCode();
         }
 
+        public int ID { get; set; }
         public string Lat { get; set; }
         public string Lng { get; set; }
         public string CityName { get; set; }
         public string Country { get; set; }
-       // public virtual ICollection<WeatherModel> Weather { get; set; }
+      
         
     }
 }

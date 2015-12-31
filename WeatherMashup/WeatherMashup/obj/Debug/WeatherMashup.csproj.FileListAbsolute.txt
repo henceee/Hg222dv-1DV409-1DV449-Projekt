@@ -23,3 +23,5 @@ C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\We
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup\obj\Debug\WeatherMashup.csprojResolveAssemblyReference.cache
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup\obj\Debug\WeatherMashup.dll
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup\obj\Debug\WeatherMashup.pdb
+C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup\bin\WeatherMashup.Domain.dll
+C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup\bin\WeatherMashup.Domain.pdb

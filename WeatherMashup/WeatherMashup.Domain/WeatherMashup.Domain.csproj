@@ -114,6 +114,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\LocationName.cs" />
     <Compile Include="WebServices\LocationWebService.cs" />
     <Compile Include="WebServices\WeatherWebService.cs" />
   </ItemGroup>
@@ -121,10 +122,6 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Content Include="App_Data\GeonamesSampleData.txt" />
-    <Content Include="App_Data\YrNoSampleData.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -135,6 +132,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
     <Folder Include="DAL\" />
     <Folder Include="Entities\" />
