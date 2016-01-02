@@ -1,0 +1,6 @@
+﻿@model WeatherMashup.Domain.Datamodels.WeatherMashup.LocationModel
+
+
+    <p>        
+       @Html.ActionLink(string.Format("{0}, {1}", Model.CityName,Model.Country), "ShowWeather", new { PositionID = Model.ID })
+    </p>

@@ -12,30 +12,41 @@ namespace WeatherMashup.Domain.WebServices
 {
     public class LocationWebService
     {
-        //TODO: get a valid username 
-        const string APIUsername = "demo";
-
         public IEnumerable<LocationModel> getLocationFromCityName(string cityName)
         {
+            LocationWebServiceWrapper wrapper = new LocationWebServiceWrapper();
 
+            var username = wrapper.getAuthentication();
+            //TODO create wrapper help-class and add username in web config ?
             //http://api.geonames.org/searchJSON?name_equals=kalmar&maxRows=50&tags=city&username=demo
-            var uriString = string.Format("http://api.geonames.org/searchJSON?name_equals={1}&maxRows=50&tags=city&username=&username={1}",
-                                         cityName,APIUsername);
-           /* var request = (HttpWebRequest)WebRequest.Create(uriString);
+            var uriString = string.Format("http://api.geonames.org/searchJSON?name_equals={0}&maxRows=50&tags=city&username={1}",
+                                         cityName,username);
+            
+            var request = (HttpWebRequest)WebRequest.Create(uriString);
             request.Method = "GET";
 
-            using (var response = request.GetResponse())
-           using (var reader = new StreamReader(response.GetResponseStream()))*/
             string rawLocationJSON;
 
-            using (var reader = new StreamReader(HttpContext.Current.Server.MapPath("~/App_Data/GeonamesSampleData.txt")))
+            using (var response = request.GetResponse())
+            using (var reader = new StreamReader(response.GetResponseStream()))
             {
                 rawLocationJSON = reader.ReadToEnd();
             }
 
+            #region sample data
+            /*using (var reader = new StreamReader(HttpContext.Current.Server.MapPath("~/App_Data/GeonamesSampleData.txt")))
+            {
+                rawLocationJSON = reader.ReadToEnd();
+            }*/
+            #endregion
+            //TODO sensative to changes, find workaround?           
+            //TODO: add check if JSON data contains more than 1 or more obj.
             var JSON = JObject.Parse(rawLocationJSON)["geonames"];
-           var JSONString = JSON.ToString();
-           return JArray.Parse(JSONString).Select(location => new LocationModel(location)).ToList();
+            
+                var JSONString = JSON.ToString();
+                return JArray.Parse(JSONString).Select(location => new LocationModel(location)).ToList();
+            
+            
         }
     }
 }

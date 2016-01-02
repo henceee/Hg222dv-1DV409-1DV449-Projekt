@@ -1,4 +1,4 @@
-﻿@model IEnumerable<WeatherMashup.Domain.Datamodels.WeatherMashup.LocationModel>
+﻿@model WeatherMashup.ViewModels.LocationName
 
 @{
     ViewBag.Title = "ViewLocations";
@@ -6,10 +6,4 @@
 
 <h2>Choose Location</h2>
 
-@foreach (var item in Model)
-{
-    <p>
-        
-       @Html.ActionLink(string.Format("{0}, {1}", item.CityName,item.Country), "ShowWeather", new { PositionID = item.ID })
-    </p>
-}
+@Html.DisplayFor(m=>m.Locations)

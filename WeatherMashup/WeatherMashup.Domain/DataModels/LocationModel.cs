@@ -18,10 +18,10 @@ namespace WeatherMashup.Domain.Datamodels.WeatherMashup
             Lng = LocationToken["lng"].ToString();
             CityName = LocationToken["name"].ToString();            
             Country = LocationToken["countryName"].ToString();
-            ID = GetHashCode();
+            LocationID = GetHashCode();
         }
 
-        public int ID { get; set; }
+        public int LocationID { get; set; }
         public string Lat { get; set; }
         public string Lng { get; set; }
         public string CityName { get; set; }

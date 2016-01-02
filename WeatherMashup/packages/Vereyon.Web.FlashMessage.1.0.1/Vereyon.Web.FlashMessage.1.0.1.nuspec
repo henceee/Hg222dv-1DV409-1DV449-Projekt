@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Vereyon.Web.FlashMessage</id>
+    <version>1.0.1</version>
+    <title>FlashMessage</title>
+    <authors>Vereyon</authors>
+    <owners>Vereyon</owners>
+    <licenseUrl>https://github.com/Vereyon/FlashMessage/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/Vereyon/FlashMessage</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>FlashMessage provides easy cross request notifications for ASP.NET MVC based on Twitter Bootstrap alerts.</description>
+    <summary>FlashMessage provides easy cross request notifications for ASP.NET MVC based on Twitter Bootstrap alerts.</summary>
+    <releaseNotes>1.0.1: Made more shorthand messages queueing methods available.</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>ASP.NET MVC PRG notification message flash</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNet.Mvc" version="3.0.50813.1" />
+    </dependencies>
+  </metadata>
+</package>

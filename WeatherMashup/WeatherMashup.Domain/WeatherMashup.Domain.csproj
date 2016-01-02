@@ -39,6 +39,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EasyErrorHandlingMvc">
+      <HintPath>..\packages\EasyErrorHandlingMvc.1.1.2\lib\net40\EasyErrorHandlingMvc.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -108,6 +111,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\ErrorHandlingConfig.cs" />
     <Compile Include="DataModels\LocationModel.cs" />
     <Compile Include="DataModels\WeatherModel.cs" />
     <Compile Include="Global.asax.cs">
@@ -116,6 +120,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\LocationName.cs" />
     <Compile Include="WebServices\LocationWebService.cs" />
+    <Compile Include="WebServices\LocationWebServiceWrapper.cs" />
+    <Compile Include="WebServices\WeatherMashupService.cs" />
     <Compile Include="WebServices\WeatherWebService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +129,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
+    <Content Include="Views\ErrorHandling\FatalError.htm" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -139,6 +146,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ErrorHandling\Unauthorized.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ErrorHandling\NotFound.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\ErrorHandling\InternalServerError.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
