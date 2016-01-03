@@ -37,19 +37,21 @@ namespace WeatherMashup.Domain.WebServices
 
             var doc = XDocument.Parse(rawXML);
 
-
+            
             try
             {
-                var model = (from time in doc.Descendants("time")
+                var model = (from weatherdata in doc.Descendants("weatherdata")
                              select new WeatherModel
                              {
-                                 Date = DateTime.ParseExact(time.Attribute("to").Value,
+                                 NextUpdate = DateTime.ParseExact(weatherdata.Element("meta").Element("nextupdate").Value,
+                                                                    "ddd MMM dd", CultureInfo.InvariantCulture),
+                                 ForecastDate = DateTime.ParseExact(weatherdata.Element("time").Attribute("to").Value,
                                                             "ddd MMM dd", CultureInfo.InvariantCulture),
-                                 Period = int.Parse(time.Attribute("period").Value),
-                                 SymbolNumber = int.Parse(time.Element("symbol").Attribute("number").Value),
-                                 Precipitation = double.Parse(time.Element("precipitation").Attribute("value").Value),
-                                 Temperature = double.Parse(time.Element("temperature").Attribute("value").Value),
-                                 TempUnit = time.Element("temperature").Attribute("unit").Value,
+                                 Period = int.Parse(weatherdata.Element("time").Attribute("period").Value),
+                                 SymbolNumber = int.Parse(weatherdata.Element("time").Element("symbol").Attribute("number").Value),
+                                 Precipitation = double.Parse(weatherdata.Element("time").Element("precipitation").Attribute("value").Value),
+                                 Temperature = double.Parse(weatherdata.Element("time").Element("temperature").Attribute("value").Value),
+                                 TempUnit = weatherdata.Element("time").Element("temperature").Attribute("unit").Value,                                 
 
                              }).ToList();
 
@@ -59,8 +61,7 @@ namespace WeatherMashup.Domain.WebServices
             {
                 
                 throw new ApplicationException("Internal error handling weather data.");
-            }
-            
+            }            
             
         }
     }

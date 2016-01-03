@@ -15,7 +15,7 @@ link to the specified URL.
     <!--
 Please read more about our conditions and guidelines at http://om.yr.no/verdata/  English explanation at http://om.yr.no/verdata/free-weather-data/
 -->
-    <link text="Weather forecast from yr.no, delivered by the Norwegian Meteorological Institute and the NRK" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/"/>
+<link text="Weather forecast from yr.no, delivered by the Norwegian Meteorological Institute and the NRK" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/"/>
   </credit>
   <links>
     <link id="xmlSource" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/forecast.xml"/>

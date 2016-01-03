@@ -8,7 +8,7 @@ using WeatherMashup.Domain.DataModels;
 namespace WeatherMashup.Domain.Datamodels.WeatherMashup
 {
     
-    public class LocationModel
+    public partial class LocationModel
     {
         
 
