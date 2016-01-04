@@ -6,13 +6,13 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
-using WeatherMashup.Domain.Datamodels.WeatherMashup;
+using WeatherMashup.Domain.Entities;
 
 namespace WeatherMashup.Domain.WebServices
 {
     public class LocationWebService
     {
-        public IEnumerable<LocationModel> getLocationFromCityName(string cityName)
+        public IEnumerable<Location> getLocationsByCityName(string cityName)
         {
             LocationWebServiceWrapper wrapper = new LocationWebServiceWrapper();
 
@@ -44,7 +44,7 @@ namespace WeatherMashup.Domain.WebServices
             var JSON = JObject.Parse(rawLocationJSON)["geonames"];
             
                 var JSONString = JSON.ToString();
-                return JArray.Parse(JSONString).Select(location => new LocationModel(location)).ToList();
+                return JArray.Parse(JSONString).Select(location => new Location(location)).ToList();
             
             
         }

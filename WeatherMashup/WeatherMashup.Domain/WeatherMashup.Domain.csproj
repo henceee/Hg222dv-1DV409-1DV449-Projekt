@@ -42,10 +42,17 @@
     <Reference Include="EasyErrorHandlingMvc">
       <HintPath>..\packages\EasyErrorHandlingMvc.1.1.2\lib\net40\EasyErrorHandlingMvc.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -118,8 +125,29 @@
     <Compile Include="Abstract\WeatherMashupRepositoryBase.cs" />
     <Compile Include="Abstract\WeatherMashupServiceBase.cs" />
     <Compile Include="App_Start\ErrorHandlingConfig.cs" />
-    <Compile Include="DataModels\LocationModel.cs" />
-    <Compile Include="DataModels\WeatherModel.cs" />
+    <Compile Include="DataModels\Location.cs">
+      <DependentUpon>WeatherMashupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\Weather.cs">
+      <DependentUpon>WeatherMashupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\WeatherMashupModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeatherMashupModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\WeatherMashupModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeatherMashupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\WeatherMashupModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeatherMashupModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Location.cs" />
+    <Compile Include="Entities\Weather.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -127,7 +155,6 @@
     <Compile Include="Repository\WeatherMashupRepository.cs" />
     <Compile Include="WebServices\LocationWebService.cs" />
     <Compile Include="WebServices\LocationWebServiceWrapper.cs" />
-    <Compile Include="WebServices\WeatherMashupService.cs" />
     <Compile Include="WebServices\WeatherWebService.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -146,11 +173,36 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Controllers\" />
-    <Folder Include="DAL\" />
-    <Folder Include="Entities\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DataModels\WeatherMashupModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WeatherMashupModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataModels\WeatherMashupModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeatherMashupModel.edmx</DependentUpon>
+      <LastGenOutput>WeatherMashupModel.Context.cs</LastGenOutput>
+      <CustomToolNamespace>WeatherMashup.Domain.Entities</CustomToolNamespace>
+    </Content>
+    <Content Include="DataModels\WeatherMashupModel.edmx.diagram">
+      <DependentUpon>WeatherMashupModel.edmx</DependentUpon>
+      <CustomToolNamespace>WeatherMashup.Domain.Entities</CustomToolNamespace>
+    </Content>
+    <Content Include="DataModels\WeatherMashupModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>WeatherMashupModel.edmx</DependentUpon>
+      <LastGenOutput>WeatherMashupModel.cs</LastGenOutput>
+      <CustomToolNamespace>WeatherMashup.Domain.Entities</CustomToolNamespace>
+    </Content>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

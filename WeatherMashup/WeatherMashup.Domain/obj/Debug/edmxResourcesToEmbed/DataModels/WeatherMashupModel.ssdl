@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dv409_hg222dv_WeatherMashupModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="dv409_hg222dv_WeatherMashupModelStoreContainer">
+    <EntitySet Name="Location" EntityType="dv409_hg222dv_WeatherMashupModel.Store.Location" store:Type="Tables" Schema="appSchem" />
+    <EntitySet Name="Weather" EntityType="dv409_hg222dv_WeatherMashupModel.Store.Weather" store:Type="Tables" Schema="appSchem" />
+    <AssociationSet Name="FK_Weather_Location1" Association="dv409_hg222dv_WeatherMashupModel.Store.FK_Weather_Location1">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Weather" EntitySet="Weather" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Lat" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="Long" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="CityName" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="Country" Type="nchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="WeatherID" />
+    </Key>
+    <Property Name="WeatherID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ForecastDate" Type="datetime" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="SymbolNumber" Type="int" Nullable="false" />
+    <Property Name="Percipitation" Type="float" Nullable="false" />
+    <Property Name="Temperature" Type="float" Nullable="false" />
+    <Property Name="TempUnit" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NextUpdate" Type="datetime" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Weather_Location1">
+    <End Role="Location" Type="dv409_hg222dv_WeatherMashupModel.Store.Location" Multiplicity="1" />
+    <End Role="Weather" Type="dv409_hg222dv_WeatherMashupModel.Store.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

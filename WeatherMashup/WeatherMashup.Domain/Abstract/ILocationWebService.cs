@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using WeatherMashup.Domain.Datamodels.WeatherMashup;
+using WeatherMashup.Domain.Entities;
 
 namespace WeatherMashup.Domain.Abstract
 {
     interface ILocationWebService :IDisposable
     {
-        IEnumerable<LocationModel> getLocationFromCityName(string cityname);
+        IEnumerable<Location> getLocationFromCityName(string cityname);
     }
 }

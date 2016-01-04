@@ -7,9 +7,7 @@ using System.Net;
 using System.Web;
 using System.Xml;
 using System.Xml.Linq;
-using WeatherMashup.Domain.Datamodels.WeatherMashup;
-using WeatherMashup.Domain.DataModels;
-
+using WeatherMashup.Domain.Entities;
 
 
 namespace WeatherMashup.Domain.WebServices
@@ -17,7 +15,7 @@ namespace WeatherMashup.Domain.WebServices
 
     public class WeatherWebService
     {
-        public IEnumerable<WeatherModel> getWeather(LocationModel location)
+        public IEnumerable<Weather> getWeather(Location location)
         {
             
             string uriString = string.Format("http://www.yr.no/place/{0}/{1}/{1}/forecast.xml",
@@ -41,7 +39,7 @@ namespace WeatherMashup.Domain.WebServices
             try
             {
                 var model = (from weatherdata in doc.Descendants("weatherdata")
-                             select new WeatherModel
+                             select new Weather(location)
                              {
                                  NextUpdate = DateTime.ParseExact(weatherdata.Element("meta").Element("nextupdate").Value,
                                                                     "ddd MMM dd", CultureInfo.InvariantCulture),
@@ -49,7 +47,7 @@ namespace WeatherMashup.Domain.WebServices
                                                             "ddd MMM dd", CultureInfo.InvariantCulture),
                                  Period = int.Parse(weatherdata.Element("time").Attribute("period").Value),
                                  SymbolNumber = int.Parse(weatherdata.Element("time").Element("symbol").Attribute("number").Value),
-                                 Precipitation = double.Parse(weatherdata.Element("time").Element("precipitation").Attribute("value").Value),
+                                 Percipitation = double.Parse(weatherdata.Element("time").Element("precipitation").Attribute("value").Value),
                                  Temperature = double.Parse(weatherdata.Element("time").Element("temperature").Attribute("value").Value),
                                  TempUnit = weatherdata.Element("time").Element("temperature").Attribute("unit").Value,                                 
 

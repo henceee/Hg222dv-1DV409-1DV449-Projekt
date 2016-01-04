@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WeatherMashup.Domain.Entities;
 
 namespace WeatherMashup.Domain.Abstract
 {
     public abstract class LocationServiceBase :ILocationWebService
     {
         #region ILocationWebService members
-        public abstract IEnumerable<Datamodels.WeatherMashup.LocationModel> getLocationFromCityName(string cityname);
+        public abstract IEnumerable<Location> getLocationFromCityName(string cityname);
 
         #endregion
 

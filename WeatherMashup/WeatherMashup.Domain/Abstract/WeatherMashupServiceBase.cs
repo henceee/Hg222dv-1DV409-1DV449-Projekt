@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using WeatherMashup.Domain.Entities;
+
+
 
 namespace WeatherMashup.Domain.Abstract
 {
@@ -18,8 +21,8 @@ namespace WeatherMashup.Domain.Abstract
             GC.SuppressFinalize(this);
         }
 
-        public abstract IEnumerable<Datamodels.WeatherMashup.LocationModel> getLocation(string cityName);
+        public abstract IEnumerable<Location> getLocation(string cityName);
 
-        public abstract IEnumerable<DataModels.WeatherModel> getWeather(Datamodels.WeatherMashup.LocationModel location);
+        public abstract IEnumerable<Weather> getWeather(Location location);
     }
 }

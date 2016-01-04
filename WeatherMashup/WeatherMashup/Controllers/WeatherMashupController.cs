@@ -6,7 +6,6 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WeatherMashup.Domain;
-using WeatherMashup.Domain.Datamodels.WeatherMashup;
 using WeatherMashup.Domain.WebServices;
 using WeatherMashup.ViewModels;
 using Vereyon.Web;
@@ -34,7 +33,7 @@ namespace WeatherMashup.Controllers
                 if (ModelState.IsValid)
                 {
                     var locationWebService = new LocationWebService();
-                    model.Locations = locationWebService.getLocationFromCityName(model.Name);
+                    model.Locations = locationWebService.getLocationsByCityName(model.Name);
                     //If there's more than one location, let the user pick.
                      if (model.Count > 1)
                      {                        
