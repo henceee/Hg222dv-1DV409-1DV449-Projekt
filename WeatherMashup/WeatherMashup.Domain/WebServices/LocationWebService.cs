@@ -16,9 +16,8 @@ namespace WeatherMashup.Domain.WebServices
         {
             LocationWebServiceWrapper wrapper = new LocationWebServiceWrapper();
 
-            var username = wrapper.getAuthentication();
-            //TODO create wrapper help-class and add username in web config ?
-            //http://api.geonames.org/searchJSON?name_equals=kalmar&maxRows=50&tags=city&username=demo
+            var username = wrapper.getAuthentication();           
+            //                              api.geonames.org/searchJSON?name_equals=kalmar&maxRows=50&tags=city&username=hg222dv
             var uriString = string.Format("http://api.geonames.org/searchJSON?name_equals={0}&maxRows=50&tags=city&username={1}",
                                          cityName,username);
             

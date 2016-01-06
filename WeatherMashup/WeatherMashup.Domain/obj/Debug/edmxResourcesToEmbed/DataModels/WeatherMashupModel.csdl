@@ -14,7 +14,6 @@
       <Parameter Name="Country" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="Weather_Insert">
-      <Parameter Name="WeatherID" Mode="InOut" Type="Int32" />
       <Parameter Name="ForecastDate" Mode="In" Type="DateTime" />
       <Parameter Name="Period" Mode="In" Type="Int32" />
       <Parameter Name="SymbolNumber" Mode="In" Type="Int32" />
@@ -22,6 +21,7 @@
       <Parameter Name="Temperature" Mode="In" Type="Double" />
       <Parameter Name="TempUnit" Mode="In" Type="String" />
       <Parameter Name="NextUpdate" Mode="In" Type="DateTime" />
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
     </FunctionImport>
     <FunctionImport Name="sp_alterdiagram">
       <Parameter Name="diagramname" Mode="In" Type="String" />
@@ -51,6 +51,30 @@
       <Parameter Name="diagramname" Mode="In" Type="String" />
       <Parameter Name="owner_id" Mode="In" Type="Int32" />
       <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Location_Delete">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Location_Update">
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+      <Parameter Name="Lat" Mode="In" Type="String" />
+      <Parameter Name="Long" Mode="In" Type="String" />
+      <Parameter Name="CityName" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="Weather_Delete">
+      <Parameter Name="WeatherID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="Weather_Update">
+      <Parameter Name="ForecastDate" Mode="In" Type="DateTime" />
+      <Parameter Name="Period" Mode="In" Type="Int32" />
+      <Parameter Name="SymbolNumber" Mode="In" Type="Int32" />
+      <Parameter Name="Percipitation" Mode="In" Type="Double" />
+      <Parameter Name="Temperature" Mode="In" Type="Double" />
+      <Parameter Name="TempUnit" Mode="In" Type="String" />
+      <Parameter Name="NextUpdate" Mode="In" Type="DateTime" />
+      <Parameter Name="LocationID" Mode="In" Type="Int32" />
+      <Parameter Name="WeatherID" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
   <EntityType Name="Location">

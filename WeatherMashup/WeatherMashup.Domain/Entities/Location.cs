@@ -18,8 +18,7 @@ namespace WeatherMashup.Domain.Entities
             Long = LocationToken.Value<string>("lng");
             CityName = LocationToken.Value<string>("name");            
             Country = LocationToken.Value<string>("countryName");
-           //TODO: Change Location.LocationID in partial
-          //  LocationID = GetHashCode();
+           
         }
 
        

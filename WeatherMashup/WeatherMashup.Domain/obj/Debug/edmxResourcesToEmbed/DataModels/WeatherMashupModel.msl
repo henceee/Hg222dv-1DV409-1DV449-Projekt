@@ -11,6 +11,27 @@
           <ScalarProperty Name="Country" ColumnName="Country" />
         </MappingFragment>
       </EntityTypeMapping>
+      <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Location">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Insert">
+            <ScalarProperty Name="Country" ParameterName="Country" />
+            <ScalarProperty Name="CityName" ParameterName="CityName" />
+            <ScalarProperty Name="Long" ParameterName="Long" />
+            <ScalarProperty Name="Lat" ParameterName="Lat" />
+            <ResultBinding Name="LocationID" ColumnName="LocationID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Update">
+            <ScalarProperty Name="Country" ParameterName="Country" Version="Current" />
+            <ScalarProperty Name="CityName" ParameterName="CityName" Version="Current" />
+            <ScalarProperty Name="Long" ParameterName="Long" Version="Current" />
+            <ScalarProperty Name="Lat" ParameterName="Lat" Version="Current" />
+            <ScalarProperty Name="LocationID" ParameterName="LocationID" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Delete">
+            <ScalarProperty Name="LocationID" ParameterName="LocationID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
+      </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Weather">
       <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Weather">
@@ -25,6 +46,35 @@
           <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
           <ScalarProperty Name="LocationID" ColumnName="LocationID" />
         </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Weather">
+        <ModificationFunctionMapping>
+          <InsertFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Insert">
+            <ScalarProperty Name="LocationID" ParameterName="LocationID" />
+            <ScalarProperty Name="NextUpdate" ParameterName="NextUpdate" />
+            <ScalarProperty Name="TempUnit" ParameterName="TempUnit" />
+            <ScalarProperty Name="Temperature" ParameterName="Temperature" />
+            <ScalarProperty Name="Percipitation" ParameterName="Percipitation" />
+            <ScalarProperty Name="SymbolNumber" ParameterName="SymbolNumber" />
+            <ScalarProperty Name="Period" ParameterName="Period" />
+            <ScalarProperty Name="ForecastDate" ParameterName="ForecastDate" />
+            <ResultBinding Name="WeatherID" ColumnName="WeatherID" />
+          </InsertFunction>
+          <UpdateFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Update">
+            <ScalarProperty Name="WeatherID" ParameterName="WeatherID" Version="Current" />
+            <ScalarProperty Name="LocationID" ParameterName="LocationID" Version="Current" />
+            <ScalarProperty Name="NextUpdate" ParameterName="NextUpdate" Version="Current" />
+            <ScalarProperty Name="TempUnit" ParameterName="TempUnit" Version="Current" />
+            <ScalarProperty Name="Temperature" ParameterName="Temperature" Version="Current" />
+            <ScalarProperty Name="Percipitation" ParameterName="Percipitation" Version="Current" />
+            <ScalarProperty Name="SymbolNumber" ParameterName="SymbolNumber" Version="Current" />
+            <ScalarProperty Name="Period" ParameterName="Period" Version="Current" />
+            <ScalarProperty Name="ForecastDate" ParameterName="ForecastDate" Version="Current" />
+          </UpdateFunction>
+          <DeleteFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Delete">
+            <ScalarProperty Name="WeatherID" ParameterName="WeatherID" />
+          </DeleteFunction>
+        </ModificationFunctionMapping>
       </EntityTypeMapping>
     </EntitySetMapping>
     <FunctionImportMapping FunctionImportName="Location_Insert" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Insert" />
@@ -52,5 +102,9 @@
       </ResultMapping>
     </FunctionImportMapping>
     <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="Location_Delete" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Delete" />
+    <FunctionImportMapping FunctionImportName="Location_Update" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Update" />
+    <FunctionImportMapping FunctionImportName="Weather_Delete" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Delete" />
+    <FunctionImportMapping FunctionImportName="Weather_Update" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Update" />
   </EntityContainerMapping>
 </Mapping>

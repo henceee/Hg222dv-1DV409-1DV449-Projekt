@@ -44,14 +44,26 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="Location_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Location_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
     <Parameter Name="Lat" Type="varchar" Mode="In" />
     <Parameter Name="Long" Type="varchar" Mode="In" />
     <Parameter Name="CityName" Type="varchar" Mode="In" />
     <Parameter Name="Country" Type="varchar" Mode="In" />
   </Function>
+  <Function Name="Location_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Lat" Type="varchar" Mode="In" />
+    <Parameter Name="Long" Type="varchar" Mode="In" />
+    <Parameter Name="CityName" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Weather_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="WeatherID" Type="int" Mode="In" />
+  </Function>
   <Function Name="Weather_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
-    <Parameter Name="WeatherID" Type="int" Mode="InOut" />
     <Parameter Name="ForecastDate" Type="datetime" Mode="In" />
     <Parameter Name="Period" Type="int" Mode="In" />
     <Parameter Name="SymbolNumber" Type="int" Mode="In" />
@@ -59,6 +71,18 @@
     <Parameter Name="Temperature" Type="float" Mode="In" />
     <Parameter Name="TempUnit" Type="varchar" Mode="In" />
     <Parameter Name="NextUpdate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Weather_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="ForecastDate" Type="datetime" Mode="In" />
+    <Parameter Name="Period" Type="int" Mode="In" />
+    <Parameter Name="SymbolNumber" Type="int" Mode="In" />
+    <Parameter Name="Percipitation" Type="float" Mode="In" />
+    <Parameter Name="Temperature" Type="float" Mode="In" />
+    <Parameter Name="TempUnit" Type="varchar" Mode="In" />
+    <Parameter Name="NextUpdate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="WeatherID" Type="int" Mode="In" />
   </Function>
   <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">

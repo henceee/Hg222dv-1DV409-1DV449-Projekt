@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using WeatherMashup.Domain.Abstract;
@@ -62,7 +63,24 @@ namespace WeatherMashup.Domain.Repository
         #region Save
         public override void Save()
         {
-            _context.SaveChanges();
+            /*
+            bool saveFailed;
+            do
+            {
+                saveFailed = false;
+                try
+                {*/
+                    _context.SaveChanges();
+                /*}
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    saveFailed = true;
+                    // Update original values from the database 
+                    var entry = ex.Entries.Single();
+                    entry.OriginalValues.SetValues(entry.GetDatabaseValues()); 
+                /*}
+            }
+            while (saveFailed);*/
         }
         #endregion
         //              DISPOSE

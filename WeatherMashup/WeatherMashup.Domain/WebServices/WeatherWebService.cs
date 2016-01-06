@@ -35,7 +35,7 @@ namespace WeatherMashup.Domain.WebServices
 
             var doc = XDocument.Parse(rawXML);
 
-            
+            //TODO DATETIME PARSE THROWS EXCEP. MAKE SURE DATA `CAN BE MADE TO PROP.
             try
             {
                 var model = (from weatherdata in doc.Descendants("weatherdata")
@@ -55,7 +55,7 @@ namespace WeatherMashup.Domain.WebServices
 
                 return model;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 
                 throw new ApplicationException("Internal error handling weather data.");

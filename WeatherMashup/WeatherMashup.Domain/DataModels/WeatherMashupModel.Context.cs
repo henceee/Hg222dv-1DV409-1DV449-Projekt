@@ -52,7 +52,7 @@ namespace WeatherMashup.Domain.Entities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Insert", latParameter, longParameter, cityNameParameter, countryParameter);
         }
     
-        public virtual int Weather_Insert(ObjectParameter weatherID, Nullable<System.DateTime> forecastDate, Nullable<int> period, Nullable<int> symbolNumber, Nullable<double> percipitation, Nullable<double> temperature, string tempUnit, Nullable<System.DateTime> nextUpdate)
+        public virtual int Weather_Insert(Nullable<System.DateTime> forecastDate, Nullable<int> period, Nullable<int> symbolNumber, Nullable<double> percipitation, Nullable<double> temperature, string tempUnit, Nullable<System.DateTime> nextUpdate, Nullable<int> locationID)
         {
             var forecastDateParameter = forecastDate.HasValue ?
                 new ObjectParameter("ForecastDate", forecastDate) :
@@ -82,7 +82,11 @@ namespace WeatherMashup.Domain.Entities
                 new ObjectParameter("NextUpdate", nextUpdate) :
                 new ObjectParameter("NextUpdate", typeof(System.DateTime));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Weather_Insert", weatherID, forecastDateParameter, periodParameter, symbolNumberParameter, percipitationParameter, temperatureParameter, tempUnitParameter, nextUpdateParameter);
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Weather_Insert", forecastDateParameter, periodParameter, symbolNumberParameter, percipitationParameter, temperatureParameter, tempUnitParameter, nextUpdateParameter, locationIDParameter);
         }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
@@ -181,6 +185,90 @@ namespace WeatherMashup.Domain.Entities
                 new ObjectParameter("new_diagramname", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_renamediagram", diagramnameParameter, owner_idParameter, new_diagramnameParameter);
+        }
+    
+        public virtual int Location_Delete(Nullable<int> locationID)
+        {
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Delete", locationIDParameter);
+        }
+    
+        public virtual int Location_Update(Nullable<int> locationID, string lat, string @long, string cityName, string country)
+        {
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(int));
+    
+            var latParameter = lat != null ?
+                new ObjectParameter("Lat", lat) :
+                new ObjectParameter("Lat", typeof(string));
+    
+            var longParameter = @long != null ?
+                new ObjectParameter("Long", @long) :
+                new ObjectParameter("Long", typeof(string));
+    
+            var cityNameParameter = cityName != null ?
+                new ObjectParameter("CityName", cityName) :
+                new ObjectParameter("CityName", typeof(string));
+    
+            var countryParameter = country != null ?
+                new ObjectParameter("Country", country) :
+                new ObjectParameter("Country", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Update", locationIDParameter, latParameter, longParameter, cityNameParameter, countryParameter);
+        }
+    
+        public virtual int Weather_Delete(Nullable<int> weatherID)
+        {
+            var weatherIDParameter = weatherID.HasValue ?
+                new ObjectParameter("WeatherID", weatherID) :
+                new ObjectParameter("WeatherID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Weather_Delete", weatherIDParameter);
+        }
+    
+        public virtual int Weather_Update(Nullable<System.DateTime> forecastDate, Nullable<int> period, Nullable<int> symbolNumber, Nullable<double> percipitation, Nullable<double> temperature, string tempUnit, Nullable<System.DateTime> nextUpdate, Nullable<int> locationID, Nullable<int> weatherID)
+        {
+            var forecastDateParameter = forecastDate.HasValue ?
+                new ObjectParameter("ForecastDate", forecastDate) :
+                new ObjectParameter("ForecastDate", typeof(System.DateTime));
+    
+            var periodParameter = period.HasValue ?
+                new ObjectParameter("Period", period) :
+                new ObjectParameter("Period", typeof(int));
+    
+            var symbolNumberParameter = symbolNumber.HasValue ?
+                new ObjectParameter("SymbolNumber", symbolNumber) :
+                new ObjectParameter("SymbolNumber", typeof(int));
+    
+            var percipitationParameter = percipitation.HasValue ?
+                new ObjectParameter("Percipitation", percipitation) :
+                new ObjectParameter("Percipitation", typeof(double));
+    
+            var temperatureParameter = temperature.HasValue ?
+                new ObjectParameter("Temperature", temperature) :
+                new ObjectParameter("Temperature", typeof(double));
+    
+            var tempUnitParameter = tempUnit != null ?
+                new ObjectParameter("TempUnit", tempUnit) :
+                new ObjectParameter("TempUnit", typeof(string));
+    
+            var nextUpdateParameter = nextUpdate.HasValue ?
+                new ObjectParameter("NextUpdate", nextUpdate) :
+                new ObjectParameter("NextUpdate", typeof(System.DateTime));
+    
+            var locationIDParameter = locationID.HasValue ?
+                new ObjectParameter("LocationID", locationID) :
+                new ObjectParameter("LocationID", typeof(int));
+    
+            var weatherIDParameter = weatherID.HasValue ?
+                new ObjectParameter("WeatherID", weatherID) :
+                new ObjectParameter("WeatherID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Weather_Update", forecastDateParameter, periodParameter, symbolNumberParameter, percipitationParameter, temperatureParameter, tempUnitParameter, nextUpdateParameter, locationIDParameter, weatherIDParameter);
         }
     }
 }

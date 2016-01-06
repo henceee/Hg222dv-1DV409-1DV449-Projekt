@@ -6,6 +6,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using WeatherMashup.Domain;
+using WeatherMashup.Domain.Abstract;
 using WeatherMashup.Domain.WebServices;
 using WeatherMashup.ViewModels;
 using Vereyon.Web;
@@ -14,7 +15,17 @@ namespace WeatherMashup.Controllers
 {
     public class WeatherMashupController : Controller
     {
-        
+        private IWeatherMashupService _service;
+
+        public WeatherMashupController()
+            :this(new WeatherMashupService())
+        {
+
+        }
+        public WeatherMashupController (IWeatherMashupService service)
+	    {
+            _service = service;
+	    }
         //
         // GET: /WeatherMashup/
         public ActionResult Index()
@@ -31,15 +42,14 @@ namespace WeatherMashup.Controllers
              try
             {
                 if (ModelState.IsValid)
-                {
-                    var locationWebService = new LocationWebService();
-                    model.Locations = locationWebService.getLocationsByCityName(model.Name);
+                {                    
+                    model.Locations = _service.getLocation(model.Name);
                     //If there's more than one location, let the user pick.
                      if (model.Count > 1)
                      {                        
                          return View("ViewLocations",model);
                      }
-                         //TODO this doesn't seem to work right, I don't think... 
+                      //TODO this doesn't seem to work right, I don't think... 
                      //If locations isn't empty, it contains one location, so show it to user.
                      else if (model.HasLocations)
                      {   
@@ -63,16 +73,28 @@ namespace WeatherMashup.Controllers
 
         //
         //GET ShowWeather        
-        public ActionResult ShowWeather(int? PositionID)
-        { 
-           
-            if (!PositionID.HasValue)
+        public ActionResult ShowWeather(int? positionID)
+        {
+            try
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                if (ModelState.IsValid)
+                {
+                    if (!positionID.HasValue)
+                    {
+                        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                    }
+                    var weatherData = _service.getWeather((int)positionID);
+                    //TODO add repo and get location name, use to get weather     
+                    return View("ShowWeather",weatherData);
+                }
+               
             }
-
-            //TODO add repo and get location name, use to get weather     
-            return View("");
+            //something's gone wrong, catch and show to user.
+            catch (Exception e)
+            {
+                      
+            }
+             return View("");
         }   
     }
 }

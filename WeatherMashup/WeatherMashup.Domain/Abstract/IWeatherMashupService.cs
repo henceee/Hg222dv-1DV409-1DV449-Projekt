@@ -8,7 +8,7 @@ using WeatherMashup.Domain.Entities;
 
 namespace WeatherMashup.Domain.Abstract
 {
-    interface IWeatherMashupService :IDisposable
+    public interface IWeatherMashupService :IDisposable
     {
         IEnumerable<Location> getLocation(string cityName);
 
