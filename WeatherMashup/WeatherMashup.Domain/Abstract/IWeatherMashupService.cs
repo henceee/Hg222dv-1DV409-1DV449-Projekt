@@ -12,6 +12,6 @@ namespace WeatherMashup.Domain.Abstract
     {
         IEnumerable<Location> getLocation(string cityName);
 
-        IEnumerable<Weather> getWeather(Location location);
+        IEnumerable<Weather> getWeather(int locationID);
     }
 }

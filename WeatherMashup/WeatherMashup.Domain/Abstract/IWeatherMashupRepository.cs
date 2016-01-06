@@ -7,7 +7,7 @@ using WeatherMashup.Domain.Entities;
 
 namespace WeatherMashup.Domain.Abstract
 {
-    interface IWeatherMashupRepository : IDisposable
+    public interface IWeatherMashupRepository : IDisposable
     {   
         /// -----------------------------------
         ///           WEATHER 

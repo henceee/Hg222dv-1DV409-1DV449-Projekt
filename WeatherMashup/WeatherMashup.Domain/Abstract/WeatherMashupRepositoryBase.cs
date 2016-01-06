@@ -9,7 +9,7 @@ namespace WeatherMashup.Domain.Abstract
     public abstract class WeatherMashupRepositoryBase : IWeatherMashupRepository
     {
         #region Dispose
-        public virtual void Dispose(bool dispose)
+        protected virtual void Dispose(bool dispose)
         {
             
         }

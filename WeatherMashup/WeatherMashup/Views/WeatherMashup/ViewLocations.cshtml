@@ -5,5 +5,12 @@
 }
 
 <h2>Choose Location</h2>
-
-@Html.DisplayFor(m=>m.Locations)
+<ul>
+@foreach (var location in Model.Locations) 
+{
+    <li>
+          @Html.ActionLink(string.Format("{0}, {1}", location.CityName,location.Country), "ShowWeather", new { PositionID = location.LocationID })
+    </li>
+}
+    </ul>
+<!--Html.DisplayFor(m=>m.Locations) -->

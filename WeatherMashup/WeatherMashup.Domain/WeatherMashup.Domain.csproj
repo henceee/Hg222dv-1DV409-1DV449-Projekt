@@ -128,6 +128,12 @@
     <Compile Include="DataModels\Location.cs">
       <DependentUpon>WeatherMashupModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModels\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>WeatherMashupModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\sp_helpdiagrams_Result.cs">
+      <DependentUpon>WeatherMashupModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModels\Weather.cs">
       <DependentUpon>WeatherMashupModel.tt</DependentUpon>
     </Compile>
@@ -155,6 +161,7 @@
     <Compile Include="Repository\WeatherMashupRepository.cs" />
     <Compile Include="WebServices\LocationWebService.cs" />
     <Compile Include="WebServices\LocationWebServiceWrapper.cs" />
+    <Compile Include="WebServices\WeatherMashupService.cs" />
     <Compile Include="WebServices\WeatherWebService.cs" />
   </ItemGroup>
   <ItemGroup>

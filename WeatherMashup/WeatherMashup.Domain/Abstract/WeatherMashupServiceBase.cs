@@ -23,6 +23,6 @@ namespace WeatherMashup.Domain.Abstract
 
         public abstract IEnumerable<Location> getLocation(string cityName);
 
-        public abstract IEnumerable<Weather> getWeather(Location location);
+        public abstract IEnumerable<Weather> getWeather(int locationID);
     }
 }

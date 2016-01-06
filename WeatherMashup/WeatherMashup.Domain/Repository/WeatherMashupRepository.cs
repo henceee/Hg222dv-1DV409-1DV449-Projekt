@@ -16,7 +16,7 @@ namespace WeatherMashup.Domain.Repository
         #region Weather
         protected override IQueryable<Entities.Weather> QueryWeather()
         {
-            return _context.Weather;
+            return _context.Weather.AsQueryable();
         }
 
         public override void InsertWeather(Entities.Weather weather)
@@ -39,7 +39,7 @@ namespace WeatherMashup.Domain.Repository
         #region Location
         protected override IQueryable<Entities.Location> QueryLocation()
         {
-            return _context.Location;
+            return _context.Location.AsQueryable();
         }
 
         public override void InsertLocation(Entities.Location location)
