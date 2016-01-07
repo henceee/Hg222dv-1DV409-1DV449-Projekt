@@ -176,7 +176,7 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Location_Delete">
-            <Parameter Name="LocationID" Mode="In" Type="Int32" />
+          <Parameter Name="LocationID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Location_Update">
             <Parameter Name="LocationID" Mode="In" Type="Int32" />
@@ -186,7 +186,7 @@
             <Parameter Name="Country" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Weather_Delete">
-            <Parameter Name="WeatherID" Mode="In" Type="Int32" />
+          <Parameter Name="WeatherID" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="Weather_Update">
             <Parameter Name="ForecastDate" Mode="In" Type="DateTime" />
@@ -300,35 +300,6 @@
                 <ScalarProperty Name="NextUpdate" ColumnName="NextUpdate" />
                 <ScalarProperty Name="LocationID" ColumnName="LocationID" />
               </MappingFragment>
-            </EntityTypeMapping>
-            <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Weather">
-              <ModificationFunctionMapping>
-                <InsertFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Insert">
-                  <ScalarProperty Name="LocationID" ParameterName="LocationID" />
-                  <ScalarProperty Name="NextUpdate" ParameterName="NextUpdate" />
-                  <ScalarProperty Name="TempUnit" ParameterName="TempUnit" />
-                  <ScalarProperty Name="Temperature" ParameterName="Temperature" />
-                  <ScalarProperty Name="Percipitation" ParameterName="Percipitation" />
-                  <ScalarProperty Name="SymbolNumber" ParameterName="SymbolNumber" />
-                  <ScalarProperty Name="Period" ParameterName="Period" />
-                  <ScalarProperty Name="ForecastDate" ParameterName="ForecastDate" />
-                  <ResultBinding Name="WeatherID" ColumnName="WeatherID" />
-                </InsertFunction>
-                <UpdateFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Update">
-                  <ScalarProperty Name="WeatherID" ParameterName="WeatherID" Version="Current" />
-                  <ScalarProperty Name="LocationID" ParameterName="LocationID" Version="Current" />
-                  <ScalarProperty Name="NextUpdate" ParameterName="NextUpdate" Version="Current" />
-                  <ScalarProperty Name="TempUnit" ParameterName="TempUnit" Version="Current" />
-                  <ScalarProperty Name="Temperature" ParameterName="Temperature" Version="Current" />
-                  <ScalarProperty Name="Percipitation" ParameterName="Percipitation" Version="Current" />
-                  <ScalarProperty Name="SymbolNumber" ParameterName="SymbolNumber" Version="Current" />
-                  <ScalarProperty Name="Period" ParameterName="Period" Version="Current" />
-                  <ScalarProperty Name="ForecastDate" ParameterName="ForecastDate" Version="Current" />
-                </UpdateFunction>
-                <DeleteFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Weather_Delete">
-                  <ScalarProperty Name="WeatherID" ParameterName="WeatherID" />
-                </DeleteFunction>
-              </ModificationFunctionMapping>
             </EntityTypeMapping>
           </EntitySetMapping>
           <FunctionImportMapping FunctionImportName="Location_Insert" FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Insert" />
