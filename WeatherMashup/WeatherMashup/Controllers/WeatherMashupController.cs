@@ -39,6 +39,8 @@ namespace WeatherMashup.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Index([Bind(Include= "Name")] LocationName model)
         {
+            //TODO FIX ENTITY FRAMEWORK BUG:
+            //Entity Framework: “Store update, insert, or delete statement affected an unexpected number of rows
              try
             {
                 if (ModelState.IsValid)
@@ -48,8 +50,7 @@ namespace WeatherMashup.Controllers
                      if (model.Count > 1)
                      {                        
                          return View("ViewLocations",model);
-                     }
-                      //TODO this doesn't seem to work right, I don't think... 
+                     }                     
                      //If locations isn't empty, it contains one location, so show it to user.
                      else if (model.HasLocations)
                      {   
@@ -83,8 +84,7 @@ namespace WeatherMashup.Controllers
                     {
                         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                     }
-                    var weatherData = _service.getWeather((int)positionID);
-                    //TODO add repo and get location name, use to get weather     
+                    var weatherData = _service.getWeather((int)positionID);         
                     return View("ShowWeather",weatherData);
                 }
                
