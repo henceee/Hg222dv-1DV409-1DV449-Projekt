@@ -38,8 +38,7 @@ namespace WeatherMashup.Domain.WebServices
                 rawLocationJSON = reader.ReadToEnd();
             }*/
             #endregion
-            //TODO sensative to changes, find workaround?           
-            //TODO: add check if JSON data contains more than 1 or more obj.
+     
             var JSON = JObject.Parse(rawLocationJSON)["geonames"];
             
                 var JSONString = JSON.ToString();
