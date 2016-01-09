@@ -9,11 +9,11 @@ using WeatherMashup.Domain.Entities;
 
 namespace WeatherMashup.ViewModels
 {
-    public class LocationName
+    public class LocationView
     {
         [Required(ErrorMessage = "Please input name of a city or location")]
         [DisplayName("location")]
-        public string Name { get; set; }
+        public string CityName { get; set; }
 
 
         public bool HasLocations { get { return Locations != null && Locations.Any(); } }
@@ -21,5 +21,6 @@ namespace WeatherMashup.ViewModels
         public int Count { get { return HasLocations ? Locations.Count() : 0; } }
 
         public IEnumerable<Location> Locations { get; set; }
+
     }
 }

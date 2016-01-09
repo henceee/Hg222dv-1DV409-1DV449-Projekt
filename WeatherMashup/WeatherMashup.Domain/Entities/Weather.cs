@@ -20,7 +20,7 @@ namespace WeatherMashup.Domain.Entities
         {
             LocationID = location.LocationID;
             Location = location;
-            
+        
         }
 
     }

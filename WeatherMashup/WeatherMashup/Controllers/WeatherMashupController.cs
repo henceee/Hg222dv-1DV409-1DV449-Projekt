@@ -37,7 +37,7 @@ namespace WeatherMashup.Controllers
         // POST /WeatherMashup
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include= "Name")] LocationName model)
+        public ActionResult Index([Bind(Include= "CityName")] LocationView model)
         {
             //TODO FIX ENTITY FRAMEWORK BUG:
             //Entity Framework: “Store update, insert, or delete statement affected an unexpected number of rows
@@ -45,14 +45,14 @@ namespace WeatherMashup.Controllers
             {
                 if (ModelState.IsValid)
                 {                    
-                    model.Locations = _service.getLocation(model.Name);
+                    model.Locations = _service.getLocation(model.CityName);
                     //If there's more than one location, let the user pick.
-                     if (model.Count > 1)
+                    if (model.HasLocations && model.Count > 1)
                      {                        
                          return View("ViewLocations",model);
                      }                     
                      //If locations isn't empty, it contains one location, so show it to user.
-                     else if (model.HasLocations)
+                     else if (model.HasLocations && model.Count ==1)
                      {   
                          return View("ShowWeather", model.Locations.First().LocationID);
                      }
@@ -84,8 +84,10 @@ namespace WeatherMashup.Controllers
                     {
                         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                     }
-                    var weatherData = _service.getWeather((int)positionID);         
-                    return View("ShowWeather",weatherData);
+                    ForecastViewModel forecast = new ForecastViewModel();
+                    forecast.Forecast = _service.getWeather((int)positionID);   
+                     
+                    return View("ShowWeather",forecast);
                 }
                
             }

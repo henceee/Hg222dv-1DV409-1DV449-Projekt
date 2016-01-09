@@ -21,3 +21,4 @@ C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\We
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\System.Web.WebPages.Razor.xml
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\obj\Debug\WeatherMashup.Domain.dll
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\obj\Debug\WeatherMashup.Domain.pdb
+C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\obj\Debug\WeatherMashup.Domain.csprojResolveAssemblyReference.cache
