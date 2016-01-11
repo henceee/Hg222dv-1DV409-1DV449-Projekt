@@ -27,14 +27,14 @@ namespace WeatherMashup
 
 		public static void RegisterCatchAllErrorHandlingRoute(this RouteCollection routes)
 		{
-			// TODO: Call this method at the bottom of RouteConfig
+			
 			// Register catch all default route
 			routes.RegisterErrorHandlingRoute("Any", "{*any}", HttpStatusCode.NotFound);
 		}
 
 		public static void RegisterSpecificErrorHandlingRoutes(this RouteCollection routes)
 		{
-			// TODO: Call this method at the top of RouteConfig
+			
 			// Register specific Error Routes, called by IIS Runtime (must match with registered urls in web.config httpErrors section)
 			routes.RegisterErrorHandlingRoute("InternalServerError", "InternalServerError/", HttpStatusCode.InternalServerError);
 			routes.RegisterErrorHandlingRoute("Unauthorized", "Unauthorized/", HttpStatusCode.Unauthorized);

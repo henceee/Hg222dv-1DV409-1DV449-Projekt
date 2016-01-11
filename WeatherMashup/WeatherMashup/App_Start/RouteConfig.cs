@@ -10,7 +10,9 @@ namespace WeatherMashup
     public class RouteConfig
     {
         public static void RegisterRoutes(RouteCollection routes)
-        {
+        { 
+            ErrorHandlingConfig.RegisterSpecificErrorHandlingRoutes(routes);
+
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
@@ -18,6 +20,8 @@ namespace WeatherMashup
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "WeatherMashup", action = "Index", id = UrlParameter.Optional }
             );
+
+            ErrorHandlingConfig.RegisterCatchAllErrorHandlingRoute(routes);
         }
     }
 }

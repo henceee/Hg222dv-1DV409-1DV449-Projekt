@@ -1,0 +1,10 @@
+﻿@model WeatherMashup.ViewModels.WeatherMashupViewModel
+
+@if (Model != null && Model.HasLocations)
+{
+    <div id="locations">
+    <ul>
+    @Html.DisplayFor(m=>m.Locations)
+    </ul>
+    </div>
+}

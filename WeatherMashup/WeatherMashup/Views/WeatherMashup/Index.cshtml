@@ -1,18 +1,27 @@
-﻿@model WeatherMashup.ViewModels.LocationName
+﻿@model WeatherMashup.ViewModels.WeatherMashupViewModel
 
 @{
     ViewBag.Title = "Index";
 }
 
-
-<h2>Index</h2>
-
+<div id="searchbarWrapper">
+<div id="searchbar">
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true,"Unable to find location. Please correct the following:");
     
-    @Html.EditorFor(m => m.Name)
-    <input type="submit" name="submit" />
+    
+    @Html.EditorFor(m=>m.CityName)   
+    <input type="submit" name="submit" id="submit"/>
    
 }
+</div>
+    
+</div>
+@Vereyon.Web.FlashMessageHtmlHelper.RenderFlashMessages(Html)
+@Html.ValidationSummary(true,"Unable to find location. Please correct the following")
+
+@Html.Partial("ViewLocations")
+
+@Html.Partial("ViewWeather");
+

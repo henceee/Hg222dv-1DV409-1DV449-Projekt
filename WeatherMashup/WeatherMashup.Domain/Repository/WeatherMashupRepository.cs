@@ -63,24 +63,17 @@ namespace WeatherMashup.Domain.Repository
         #region Save
         public override void Save()
         {
-         /*   
-            bool saveFailed;
-            do
+            try
             {
-                saveFailed = false;
-                try
-                {*/
-                    _context.SaveChanges();
-               /* }
-                catch (DbUpdateConcurrencyException ex)
-                {
-                    saveFailed = true;
-                    // Update original values from the database 
-                    var entry = ex.Entries.Single();
-                    entry.OriginalValues.SetValues(entry.GetDatabaseValues()); 
-                }
+                _context.SaveChanges();
             }
-            while (saveFailed);*/
+            catch (OptimisticConcurrencyException)
+            {
+                //do something
+            }
+       
+                    
+               
         }
         #endregion
         //              DISPOSE

@@ -11,6 +11,7 @@ C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\We
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\System.Web.WebPages.Deployment.dll
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\System.Web.WebPages.dll
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\System.Web.WebPages.Razor.dll
+C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\Vereyon.Web.FlashMessage.dll
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\EntityFramework.xml
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\Newtonsoft.Json.xml
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\System.Web.Helpers.xml
@@ -21,4 +22,3 @@ C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\We
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\bin\System.Web.WebPages.Razor.xml
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\obj\Debug\WeatherMashup.Domain.dll
 C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\obj\Debug\WeatherMashup.Domain.pdb
-C:\Users\hg222dv\Documents\GitHub\Hg222dv-1DV409-1DV449-Projekt\WeatherMashup\WeatherMashup.Domain\obj\Debug\WeatherMashup.Domain.csprojResolveAssemblyReference.cache

@@ -34,10 +34,10 @@ namespace WeatherMashup.Controllers
         }
 
         //
-        // POST /WeatherMashup
+        // POST /Index
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index([Bind(Include= "CityName")] LocationView model)
+        public ActionResult Index([Bind(Include= "CityName")] WeatherMashupViewModel model)
         {
             //TODO FIX ENTITY FRAMEWORK BUG:
             //Entity Framework: “Store update, insert, or delete statement affected an unexpected number of rows
@@ -49,24 +49,23 @@ namespace WeatherMashup.Controllers
                     //If there's more than one location, let the user pick.
                     if (model.HasLocations && model.Count > 1)
                      {                        
-                         return View("ViewLocations",model);
+                         return View("Index",model);
                      }                     
                      //If locations isn't empty, it contains one location, so show it to user.
                      else if (model.HasLocations && model.Count ==1)
-                     {   
-                         return View("ShowWeather", model.Locations.First().LocationID);
+                     {  
+                         return View("Index", model.Locations.First().LocationID);
                      }
                     //Otherwise there's no matches, show message to user
-                    FlashMessage.Danger("No locations where found.");
+                   // FlashMessage.Danger("No locations where found.");
                                        
                 }                
                 return View("Index");
             }
             //something's gone wrong, catch and show to user.
             catch (Exception e)
-            {
-                //TODO get freaking flashmessage to show -.-
-                FlashMessage.Danger("Unable to find requested location.Please check your spelling."); 
+            {                
+               FlashMessage.Danger("Unable to find requested location.Please check your spelling."); 
             }
 
              return View("Index", model);
@@ -84,10 +83,9 @@ namespace WeatherMashup.Controllers
                     {
                         return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
                     }
-                    ForecastViewModel forecast = new ForecastViewModel();
-                    forecast.Forecast = _service.getWeather((int)positionID);   
-                     
-                    return View("ShowWeather",forecast);
+                    WeatherMashupViewModel model = new WeatherMashupViewModel();
+                    model.Weather = _service.getWeather((int)positionID); 
+                    return View("Index",model);
                 }
                
             }

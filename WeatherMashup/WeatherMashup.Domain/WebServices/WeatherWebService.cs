@@ -36,27 +36,29 @@ namespace WeatherMashup.Domain.WebServices
                 {
                     //IEnumerable<XElement> weatherData =
                      var doc = XDocument.Load(reader);
- 
-                     weatherList = (from weatherdata in doc.Elements("weatherdata")                                    
+
+                     var nextUpdate = DateTime.Parse(doc.Element("weatherdata").Element("meta").Element("nextupdate").Value,
+                                      CultureInfo.InvariantCulture);
+                    
+                     return (from time in doc.Descendants("time")                                    
                                   select new Weather(location)
                                   {                                      
-                                      NextUpdate = DateTime.Parse(weatherdata.Element("meta").Element("nextupdate").Value,
-                                      CultureInfo.InvariantCulture),
-                                      ForecastDate = DateTime.Parse(weatherdata.Element("forecast").Element("tabular").Element("time").Attribute("to").Value,
+                                      NextUpdate = nextUpdate,
+                                      ForecastDate = DateTime.Parse(time.Attribute("from").Value,
                                                                 CultureInfo.InvariantCulture),
-                                      Period = int.Parse(weatherdata.Element("forecast").Element("tabular").Element("time").Attribute("period").Value),
-                                      SymbolNumber = int.Parse(weatherdata.Element("forecast").Element("tabular").Element("time").Element("symbol").Attribute("number").Value),
-                                      Percipitation = double.Parse(weatherdata.Element("forecast").Element("tabular").Element("time").Element("precipitation").Attribute("value").Value),
-                                      Temperature = double.Parse(weatherdata.Element("forecast").Element("tabular").Element("time").Element("temperature").Attribute("value").Value),
-                                      TempUnit = weatherdata.Element("forecast").Element("tabular").Element("time").Element("temperature").Attribute("unit").Value,  
+                                      Period = int.Parse(time.Attribute("period").Value),
+                                      SymbolNumber = int.Parse(time.Element("symbol").Attribute("number").Value),
+                                      Percipitation = Convert.ToDouble(time.Element("precipitation").Attribute("value").Value,
+                                                                       CultureInfo.InvariantCulture),
+                                      Temperature = Convert.ToDouble(time.Element("temperature").Attribute("value").Value,
+                                                                     CultureInfo.InvariantCulture),
+                                      TempUnit = time.Element("temperature").Attribute("unit").Value,  
                                   }).ToList();
+                    }
                 
 
-                }
-
-                return weatherList;                               
-               
-            }
+            }                                
+                           
             catch (Exception e)
             {
                 

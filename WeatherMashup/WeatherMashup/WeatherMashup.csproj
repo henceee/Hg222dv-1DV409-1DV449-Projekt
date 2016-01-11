@@ -140,14 +140,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\ForecastViewModel.cs" />
-    <Compile Include="ViewModels\LocationViewModel.cs" />
+    <Compile Include="ViewModels\WeatherMashupViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\GeonamesSampleData.txt" />
     <Content Include="App_Data\YrNoSampleData.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Content\Style.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -235,12 +235,13 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\WeatherMashup\Index.cshtml" />
-    <Content Include="Views\Shared\DisplayTemplates\LocationModel.cshtml" />
-    <Content Include="Views\WeatherMashup\ViewLocations.cshtml" />
     <Content Include="Views\ErrorHandling\Unauthorized.cshtml" />
     <Content Include="Views\ErrorHandling\NotFound.cshtml" />
     <Content Include="Views\ErrorHandling\InternalServerError.cshtml" />
-    <Content Include="Views\WeatherMashup\ShowWeather.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Location.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Weather.cshtml" />
+    <Content Include="Views\Shared\ViewLocations.cshtml" />
+    <Content Include="Views\Shared\ViewWeather.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

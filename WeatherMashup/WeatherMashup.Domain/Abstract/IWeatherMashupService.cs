@@ -10,7 +10,8 @@ namespace WeatherMashup.Domain.Abstract
 {
     public interface IWeatherMashupService :IDisposable
     {
-        IEnumerable<Location> getLocation(string cityName);
+        IEnumerable<Location> 
+            getLocation(string cityName);
 
         IEnumerable<Weather> getWeather(int locationID);
     }

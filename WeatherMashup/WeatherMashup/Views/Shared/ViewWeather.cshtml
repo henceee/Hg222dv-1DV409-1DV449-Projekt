@@ -1,0 +1,14 @@
+﻿@model WeatherMashup.ViewModels.WeatherMashupViewModel
+
+<div id ="weather">
+@if(Model !=null && Model.HasWeather)
+{
+    <h2>5 Day Forecast for @Model.City</h2>
+        
+        @Html.DisplayFor(m=>m.Forecast)
+}
+else
+{
+    <p>No weatherdata to be shown. Please search or select location.</p>
+}
+ </div>
