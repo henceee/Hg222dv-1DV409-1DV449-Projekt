@@ -63,5 +63,10 @@ namespace WeatherMashup.Domain.WebServices
             _repository.Dispose();
             base.Dispose(disposing);
         }
+
+        public override IEnumerable<string> getLocations(string term)
+        {
+            return _repository.GetLocations(term);
+        }
     }
 }

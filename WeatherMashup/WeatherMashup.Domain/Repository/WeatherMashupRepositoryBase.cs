@@ -56,5 +56,15 @@ namespace WeatherMashup.Domain.Abstract
         #region Save
         public abstract void Save();
         #endregion
+
+
+        public IEnumerable<string> GetLocations(string term)
+        {
+            return QueryLocation()
+                    .Where(l => l.CityName.Contains(term))
+                    .Select(l => l.CityName)
+                    .OrderBy(l => l)
+                    .ToList();
+        }
     }
 }

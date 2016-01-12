@@ -4,8 +4,13 @@
     ViewBag.Title = "Index";
 }
 
+@section head
+{
+    @Styles.Render("~/Content/themes/base/css")
+}
 <div id="searchbarWrapper">
 <div id="searchbar">
+
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -23,5 +28,37 @@
 
 @Html.Partial("ViewLocations")
 
-@Html.Partial("ViewWeather");
+@Html.Partial("ViewWeather")
 
+@section Scripts
+{
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+}
+<!--TODO MOVE TO EXTERNAL JS SCRIPT -->
+<!--Uncaught ReferenceError: $ is not defined(anonymous function)  at (index):52 -->
+<!-- 
+<script type="text/javascript">
+    $(function () {
+
+        $("#CityName").autocomplete({
+            source: function (request, response) {
+                //Define a function to call the action method.
+                $.ajax({
+                    url: '@Url.Action("GetLocations")',
+                    data: { query: request.term }, // query will be the parameter used by the action method.
+                    dataType: "json",
+                    type: "GET",
+                    success: function (data) {
+                        response($.map(function(item){
+                            return { value: item };
+                        }))
+                    }
+                });
+            }
+        })
+    });
+
+</script>
+    -->

@@ -122,10 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\ILocationWebService.cs" />
-    <Compile Include="Abstract\IWeatherMashupRepository.cs" />
+    <Compile Include="Repository\IWeatherMashupRepository.cs" />
     <Compile Include="Abstract\IWeatherMashupService.cs" />
     <Compile Include="Abstract\LocationServiceBase.cs" />
-    <Compile Include="Abstract\WeatherMashupRepositoryBase.cs" />
+    <Compile Include="Repository\WeatherMashupRepositoryBase.cs" />
     <Compile Include="Abstract\WeatherMashupServiceBase.cs" />
     <Compile Include="App_Start\ErrorHandlingConfig.cs" />
     <Compile Include="DataModels\Location.cs">
