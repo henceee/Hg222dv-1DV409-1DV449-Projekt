@@ -243,6 +243,7 @@
     <Content Include="Views\Shared\DisplayTemplates\Weather.cshtml" />
     <Content Include="Views\Shared\ViewLocations.cshtml" />
     <Content Include="Views\Shared\ViewWeather.cshtml" />
+    <Content Include="Views\Shared\AppCacheManifest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />

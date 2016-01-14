@@ -2,5 +2,5 @@
 
 
     <li>
-          @Html.ActionLink(string.Format("{0}, {1}", Model.CityName,Model.Country), "ShowWeather", new { PositionID = Model.LocationID})
+          @Html.ActionLink(string.Format("{0}, {1}", Model.CityName,Model.Country), "ShowWeather", new { PositionID = Model.LocationID},new { @class = "persist-local" })
     </li>

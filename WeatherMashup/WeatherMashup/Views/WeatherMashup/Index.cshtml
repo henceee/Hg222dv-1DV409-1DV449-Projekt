@@ -11,12 +11,12 @@
 <div id="searchbarWrapper">
 <div id="searchbar">
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Index", "WeatherMashup", FormMethod.Post, new { @class = "persist-local" }))
 {
     @Html.AntiForgeryToken()
     
     
-    @Html.EditorFor(m=>m.CityName)   
+    @Html.EditorFor(m => m.CityName)   
     <input type="submit" name="submit" id="submit"/>
    
 }

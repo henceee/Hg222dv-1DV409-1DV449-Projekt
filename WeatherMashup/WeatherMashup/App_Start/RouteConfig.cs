@@ -21,6 +21,11 @@ namespace WeatherMashup
                 defaults: new { controller = "WeatherMashup", action = "Index", id = UrlParameter.Optional }
             );
 
+            routes.MapRoute(
+                null,
+                "manifest.appcache",
+                new { controller = "Shared", action = "AppCacheManifest" });
+
             ErrorHandlingConfig.RegisterCatchAllErrorHandlingRoute(routes);
         }
     }
