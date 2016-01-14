@@ -1,6 +1,6 @@
 ﻿@model WeatherMashup.Domain.Entities.Weather
 
-<div class="day">
+<div class="day persist-local" dataidval="consent-form-"+ @Model.LocationID }>
         <span class="forecastDate">@Model.ForecastDate.ToString( @"dddd \t\h\e dd \o\f MMMM",System.Globalization.CultureInfo.InvariantCulture) </span>
         
         <div class="weatherSymbol">
