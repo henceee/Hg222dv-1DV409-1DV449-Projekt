@@ -7,7 +7,7 @@ Bakgrunden till mitt val av applikationsidé beror helt enkelt på bristande id�
 Naturligtvis finns det massvis med väderapplikationer med liknande funktionalitet, och mer funktionalitet, såsom väder.nu, SMHI,klart.se,DMI med flera väderapplikationer där man kan söka efter väderprognoser efter ortsnammn. Vilka tekniker dessa använder är dock för mig ovisst.
 Tekniken jag har valt att anväda är ASP.NET MVC 4 samt MYSQL.
 
- 
+ !["Application Layers"](https://raw.githubusercontent.com/henceee/Hg222dv-1DV409-1DV449-Projekt/15236a086fa3547da9903f0f238c20108975d8f9/WeatherMashup/ApplicationLayers.png)
 
 ##Säkerhet och Prestandaomtimering
 
