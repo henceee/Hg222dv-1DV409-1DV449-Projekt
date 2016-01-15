@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Location">
       <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Location">
         <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Region" ColumnName="Region" />
           <ScalarProperty Name="LocationID" ColumnName="LocationID" />
           <ScalarProperty Name="Lat" ColumnName="Lat" />
           <ScalarProperty Name="Long" ColumnName="Long" />
@@ -14,6 +15,7 @@
       <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Location">
         <ModificationFunctionMapping>
           <InsertFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Insert">
+            <ScalarProperty Name="Region" ParameterName="Region" />
             <ScalarProperty Name="Country" ParameterName="Country" />
             <ScalarProperty Name="CityName" ParameterName="CityName" />
             <ScalarProperty Name="Long" ParameterName="Long" />
@@ -21,6 +23,7 @@
             <ResultBinding Name="LocationID" ColumnName="LocationID" />
           </InsertFunction>
           <UpdateFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Update">
+            <ScalarProperty Name="Region" ParameterName="Region" Version="Current" />
             <ScalarProperty Name="Country" ParameterName="Country" Version="Current" />
             <ScalarProperty Name="CityName" ParameterName="CityName" Version="Current" />
             <ScalarProperty Name="Long" ParameterName="Long" Version="Current" />

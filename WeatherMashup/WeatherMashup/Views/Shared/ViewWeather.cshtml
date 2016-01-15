@@ -6,10 +6,12 @@
     <h2>5 Day Forecast for @Model.City</h2>
         
         @Html.DisplayFor(m=>m.Forecast)
+    <br />
+    @Html.ActionLink("Tillbaka","Index");
 }
 else
 {
     <p>No weatherdata to be shown. Please search or select location.</p>
 }
-    <a href="~/Views/WeatherMashup/Index">Tillbaka</a>
+
  </div>

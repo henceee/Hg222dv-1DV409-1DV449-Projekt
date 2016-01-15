@@ -19,8 +19,8 @@ namespace WeatherMashup.Domain.WebServices
         public IEnumerable<Weather> getWeather(Location location)
         {
             
-            string uriString = string.Format("http://www.yr.no/place/{0}/{1}/{1}/forecast.xml",
-                                            location.Country,location.CityName,location.CityName);
+            string uriString = string.Format("http://www.yr.no/place/{0}/{1}/{2}/forecast.xml",
+                                            location.Country,location.Region,location.CityName);
             List<Weather> weatherList = new List<Weather>();
 
 

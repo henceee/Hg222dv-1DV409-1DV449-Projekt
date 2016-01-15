@@ -12,6 +12,7 @@
       <Parameter Name="Long" Mode="In" Type="String" />
       <Parameter Name="CityName" Mode="In" Type="String" />
       <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Region" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="Weather_Insert">
       <Parameter Name="ForecastDate" Mode="In" Type="DateTime" />
@@ -61,6 +62,7 @@
       <Parameter Name="Long" Mode="In" Type="String" />
       <Parameter Name="CityName" Mode="In" Type="String" />
       <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="Region" Mode="In" Type="String" />
     </FunctionImport>
     <FunctionImport Name="Weather_Delete">
       <Parameter Name="WeatherID" Mode="In" Type="Int32" />
@@ -87,6 +89,7 @@
     <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
     <NavigationProperty Name="Weather" Relationship="dv409_hg222dv_WeatherMashupModel.FK_Weather_Location1" FromRole="Location" ToRole="Weather" />
+    <Property Type="String" Name="Region" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Weather">
     <Key>

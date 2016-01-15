@@ -15,10 +15,11 @@ namespace WeatherMashup.Domain.Entities
         public Location(JToken LocationToken)
             :this()
         {
-            Lat = LocationToken.Value<string>("lat");
-            Long = LocationToken.Value<string>("lng");
+            Lat      = LocationToken.Value<string>("lat");
+            Long     = LocationToken.Value<string>("lng");
             CityName = LocationToken.Value<string>("name");            
-            Country = LocationToken.Value<string>("countryName");
+            Country  = LocationToken.Value<string>("countryName");
+            Region = LocationToken.Value<string>("adminName1");
            
         }
 

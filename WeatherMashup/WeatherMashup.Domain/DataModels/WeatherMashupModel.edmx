@@ -22,6 +22,7 @@
           <Property Name="Long" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="CityName" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Region" Type="varchar" Nullable="false" MaxLength="50" />
         </EntityType>
         <EntityType Name="Weather">
           <Key>
@@ -57,6 +58,7 @@
           <Parameter Name="Long" Type="varchar" Mode="In" />
           <Parameter Name="CityName" Type="varchar" Mode="In" />
           <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="Region" Type="varchar" Mode="In" />
         </Function>
         <Function Name="Location_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
           <Parameter Name="LocationID" Type="int" Mode="In" />
@@ -64,6 +66,7 @@
           <Parameter Name="Long" Type="varchar" Mode="In" />
           <Parameter Name="CityName" Type="varchar" Mode="In" />
           <Parameter Name="Country" Type="varchar" Mode="In" />
+          <Parameter Name="Region" Type="varchar" Mode="In" />
         </Function>
         <Function Name="Weather_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
           <Parameter Name="WeatherID" Type="int" Mode="In" />
@@ -135,6 +138,7 @@
             <Parameter Name="Long" Mode="In" Type="String" />
             <Parameter Name="CityName" Mode="In" Type="String" />
             <Parameter Name="Country" Mode="In" Type="String" />
+            <Parameter Name="Region" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Weather_Insert">
             <Parameter Name="ForecastDate" Mode="In" Type="DateTime" />
@@ -184,6 +188,7 @@
             <Parameter Name="Long" Mode="In" Type="String" />
             <Parameter Name="CityName" Mode="In" Type="String" />
             <Parameter Name="Country" Mode="In" Type="String" />
+            <Parameter Name="Region" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="Weather_Delete">
           <Parameter Name="WeatherID" Mode="In" Type="Int32" />
@@ -210,6 +215,7 @@
           <Property Name="CityName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="Weather" Relationship="dv409_hg222dv_WeatherMashupModel.FK_Weather_Location1" FromRole="Location" ToRole="Weather" />
+          <Property Type="String" Name="Region" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Weather">
           <Key>
@@ -258,6 +264,7 @@
           <EntitySetMapping Name="Location">
             <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Location">
               <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="Region" ColumnName="Region" />
                 <ScalarProperty Name="LocationID" ColumnName="LocationID" />
                 <ScalarProperty Name="Lat" ColumnName="Lat" />
                 <ScalarProperty Name="Long" ColumnName="Long" />
@@ -268,6 +275,7 @@
             <EntityTypeMapping TypeName="dv409_hg222dv_WeatherMashupModel.Location">
               <ModificationFunctionMapping>
                 <InsertFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Insert">
+                  <ScalarProperty Name="Region" ParameterName="Region" />
                   <ScalarProperty Name="Country" ParameterName="Country" />
                   <ScalarProperty Name="CityName" ParameterName="CityName" />
                   <ScalarProperty Name="Long" ParameterName="Long" />
@@ -275,6 +283,7 @@
                   <ResultBinding Name="LocationID" ColumnName="LocationID" />
                 </InsertFunction>
                 <UpdateFunction FunctionName="dv409_hg222dv_WeatherMashupModel.Store.Location_Update">
+                  <ScalarProperty Name="Region" ParameterName="Region" Version="Current" />
                   <ScalarProperty Name="Country" ParameterName="Country" Version="Current" />
                   <ScalarProperty Name="CityName" ParameterName="CityName" Version="Current" />
                   <ScalarProperty Name="Long" ParameterName="Long" Version="Current" />

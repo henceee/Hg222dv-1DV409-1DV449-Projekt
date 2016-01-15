@@ -17,6 +17,7 @@
     <Property Name="Long" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="CityName" Type="varchar" Nullable="false" MaxLength="50" />
     <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Region" Type="varchar" Nullable="false" MaxLength="50" />
   </EntityType>
   <EntityType Name="Weather">
     <Key>
@@ -52,6 +53,7 @@
     <Parameter Name="Long" Type="varchar" Mode="In" />
     <Parameter Name="CityName" Type="varchar" Mode="In" />
     <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Region" Type="varchar" Mode="In" />
   </Function>
   <Function Name="Location_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
     <Parameter Name="LocationID" Type="int" Mode="In" />
@@ -59,6 +61,7 @@
     <Parameter Name="Long" Type="varchar" Mode="In" />
     <Parameter Name="CityName" Type="varchar" Mode="In" />
     <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="Region" Type="varchar" Mode="In" />
   </Function>
   <Function Name="Weather_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
     <Parameter Name="WeatherID" Type="int" Mode="In" />

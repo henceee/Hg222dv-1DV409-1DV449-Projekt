@@ -24,6 +24,7 @@ namespace WeatherMashup.Domain.Entities
         public string Long { get; set; }
         public string CityName { get; set; }
         public string Country { get; set; }
+        public string Region { get; set; }
     
         public virtual ICollection<Weather> Weather { get; set; }
     }

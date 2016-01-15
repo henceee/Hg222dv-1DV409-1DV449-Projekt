@@ -31,7 +31,7 @@ namespace WeatherMashup.Domain.Entities
         public DbSet<Location> Location { get; set; }
         public DbSet<Weather> Weather { get; set; }
     
-        public virtual int Location_Insert(string lat, string @long, string cityName, string country)
+        public virtual int Location_Insert(string lat, string @long, string cityName, string country, string region)
         {
             var latParameter = lat != null ?
                 new ObjectParameter("Lat", lat) :
@@ -49,7 +49,11 @@ namespace WeatherMashup.Domain.Entities
                 new ObjectParameter("Country", country) :
                 new ObjectParameter("Country", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Insert", latParameter, longParameter, cityNameParameter, countryParameter);
+            var regionParameter = region != null ?
+                new ObjectParameter("Region", region) :
+                new ObjectParameter("Region", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Insert", latParameter, longParameter, cityNameParameter, countryParameter, regionParameter);
         }
     
         public virtual int Weather_Insert(Nullable<System.DateTime> forecastDate, Nullable<int> period, Nullable<int> symbolNumber, Nullable<double> percipitation, Nullable<double> temperature, string tempUnit, Nullable<System.DateTime> nextUpdate, Nullable<int> locationID)
@@ -196,7 +200,7 @@ namespace WeatherMashup.Domain.Entities
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Delete", locationIDParameter);
         }
     
-        public virtual int Location_Update(Nullable<int> locationID, string lat, string @long, string cityName, string country)
+        public virtual int Location_Update(Nullable<int> locationID, string lat, string @long, string cityName, string country, string region)
         {
             var locationIDParameter = locationID.HasValue ?
                 new ObjectParameter("LocationID", locationID) :
@@ -218,7 +222,11 @@ namespace WeatherMashup.Domain.Entities
                 new ObjectParameter("Country", country) :
                 new ObjectParameter("Country", typeof(string));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Update", locationIDParameter, latParameter, longParameter, cityNameParameter, countryParameter);
+            var regionParameter = region != null ?
+                new ObjectParameter("Region", region) :
+                new ObjectParameter("Region", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Location_Update", locationIDParameter, latParameter, longParameter, cityNameParameter, countryParameter, regionParameter);
         }
     
         public virtual int Weather_Delete(Nullable<int> weatherID)

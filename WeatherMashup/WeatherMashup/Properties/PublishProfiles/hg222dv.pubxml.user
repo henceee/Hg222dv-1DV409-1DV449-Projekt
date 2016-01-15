@@ -60,10 +60,10 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/15/2016 14:27:57</publishTime>
     </File>
     <File Include="bin/WeatherMashup.dll">
-      <publishTime>01/15/2016 16:28:40</publishTime>
+      <publishTime>01/15/2016 17:06:59</publishTime>
     </File>
     <File Include="bin/WeatherMashup.Domain.dll">
-      <publishTime>01/15/2016 16:28:39</publishTime>
+      <publishTime>01/15/2016 17:06:59</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/15/2016 14:27:57</publishTime>
@@ -312,7 +312,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/15/2016 14:27:54</publishTime>
     </File>
     <File Include="Views/Shared/ViewWeather.cshtml">
-      <publishTime>01/15/2016 14:27:54</publishTime>
+      <publishTime>01/15/2016 16:42:09</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
       <publishTime>01/15/2016 14:27:54</publishTime>
@@ -327,7 +327,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>01/15/2016 14:27:54</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>01/15/2016 15:45:21</publishTime>
+      <publishTime>01/15/2016 16:42:19</publishTime>
     </File>
   </ItemGroup>
 </Project>
