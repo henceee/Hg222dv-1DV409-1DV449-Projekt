@@ -1,0 +1,12 @@
+﻿@model WeatherMashup.Domain.Entities.Weather
+
+<div class="day persist-local" dataidval="consent-form-"+ @Model.LocationID }>
+        <span class="forecastDate">@Model.ForecastDate.ToString( @"dddd \t\h\e dd \o\f MMMM",System.Globalization.CultureInfo.InvariantCulture) </span>
+        
+        <div class="weatherSymbol">
+        <img src="http://api.met.no/weatherapi/weathericon/1.1/?symbol=@Model.SymbolNumber;content_type=image/png" />
+        </div>
+    
+        <span class="tempature">@Model.Temperature ° @Model.TempUnit</span> 
+        <span class="Percipitation">@Model.Percipitation mm </span>    
+</div>

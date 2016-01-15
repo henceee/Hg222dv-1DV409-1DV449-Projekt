@@ -1,0 +1,39 @@
+﻿@model WeatherMashup.ViewModels.WeatherMashupViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@section head
+{
+    @Styles.Render("~/Content/themes/base/css")
+}
+<div id="searchbarWrapper">
+<div id="searchbar">
+    
+@using (Html.BeginForm("Index", "WeatherMashup", FormMethod.Post, new { @class = "persist-local", dataidval = (Model == null) ? string.Empty : "consent-form-" + Model.CityName }))
+{
+    @Html.AntiForgeryToken()
+    
+    
+    @Html.EditorFor(m => m.CityName)   
+    <input type="submit" name="submit" id="submit"/>
+   
+}
+</div>
+    
+</div>
+@Vereyon.Web.FlashMessageHtmlHelper.RenderFlashMessages(Html)
+@Html.ValidationSummary(true,"Unable to find location. Please correct the following")
+
+@Html.Partial("ViewLocations")
+
+@Html.Partial("ViewWeather")
+
+@section Scripts
+{
+
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jqueryui")
+}
+

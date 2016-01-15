@@ -1,0 +1,6 @@
+﻿@model WeatherMashup.Domain.Entities.Location
+
+
+    <li>
+          @Html.ActionLink(string.Format("{0}, {1}", Model.CityName,Model.Country), "ShowWeather", new { PositionID = Model.LocationID},new{ @class = "persist-local", dataidval="consent-form-"+Model.LocationID })
+    </li>

@@ -1,0 +1,480 @@
+﻿<weatherdata>
+  <location>
+    <name>Kalmar</name>
+    <type>Regional capital</type>
+    <country>Sweden</country>
+    <timezone id="Europe/Stockholm" utcoffsetMinutes="60"/>
+    <location altitude="7" latitude="56.66157" longitude="16.36163" geobase="geonames" geobaseid="2702261"/>
+  </location>
+  <credit>
+    <!--
+In order to use the free weather data from yr no, you HAVE to display 
+the following text clearly visible on your web page. The text should be a 
+link to the specified URL.
+-->
+    <!--
+Please read more about our conditions and guidelines at http://om.yr.no/verdata/  English explanation at http://om.yr.no/verdata/free-weather-data/
+-->
+<link text="Weather forecast from yr.no, delivered by the Norwegian Meteorological Institute and the NRK" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/"/>
+  </credit>
+  <links>
+    <link id="xmlSource" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/forecast.xml"/>
+    <link id="xmlSourceHourByHour" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/forecast_hour_by_hour.xml"/>
+    <link id="overview" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/"/>
+    <link id="hourByHour" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/hour_by_hour"/>
+    <link id="longTermForecast" url="http://www.yr.no/place/Sweden/Kalmar/Kalmar/long"/>
+  </links>
+  <meta>
+    <lastupdate>2015-12-29T15:49:00</lastupdate>
+    <nextupdate>2015-12-29T23:00:00</nextupdate>
+  </meta>
+  <sun rise="2015-12-29T08:30:46" set="2015-12-29T15:22:11"/>
+  <forecast>
+    <tabular>
+      <time from="2015-12-29T20:00:00" to="2015-12-30T00:00:00" period="3">
+        <!--
+ Valid from 2015-12-29T20:00:00 to 2015-12-30T00:00:00 
+-->
+        <symbol number="1" numberEx="1" name="Clear sky" var="mf/01n.61"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-29T20:00:00  -->
+        <windDirection deg="153.1" code="SSE" name="South-southeast"/>
+        <windSpeed mps="6.1" name="Moderate breeze"/>
+        <temperature unit="celsius" value="2"/>
+        <pressure unit="hPa" value="1041.1"/>
+      </time>
+      <time from="2015-12-30T00:00:00" to="2015-12-30T06:00:00" period="0">
+        <!--
+ Valid from 2015-12-30T00:00:00 to 2015-12-30T06:00:00 
+-->
+        <symbol number="2" numberEx="2" name="Fair" var="mf/02n.64"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-30T00:00:00  -->
+        <windDirection deg="157.9" code="SSE" name="South-southeast"/>
+        <windSpeed mps="6.2" name="Moderate breeze"/>
+        <temperature unit="celsius" value="2"/>
+        <pressure unit="hPa" value="1040.3"/>
+      </time>
+      <time from="2015-12-30T06:00:00" to="2015-12-30T12:00:00" period="1">
+        <!--
+ Valid from 2015-12-30T06:00:00 to 2015-12-30T12:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-30T06:00:00  -->
+        <windDirection deg="165.2" code="SSE" name="South-southeast"/>
+        <windSpeed mps="5.0" name="Gentle breeze"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1040.1"/>
+      </time>
+      <time from="2015-12-30T12:00:00" to="2015-12-30T18:00:00" period="2">
+        <!--
+ Valid from 2015-12-30T12:00:00 to 2015-12-30T18:00:00 
+-->
+        <symbol number="3" numberEx="3" name="Partly cloudy" var="03d"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-30T12:00:00  -->
+        <windDirection deg="177.7" code="S" name="South"/>
+        <windSpeed mps="7.5" name="Moderate breeze"/>
+        <temperature unit="celsius" value="2"/>
+        <pressure unit="hPa" value="1037.4"/>
+      </time>
+      <time from="2015-12-30T18:00:00" to="2015-12-31T00:00:00" period="3">
+        <!--
+ Valid from 2015-12-30T18:00:00 to 2015-12-31T00:00:00 
+-->
+        <symbol number="1" numberEx="1" name="Clear sky" var="mf/01n.64"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-30T18:00:00  -->
+        <windDirection deg="177.1" code="S" name="South"/>
+        <windSpeed mps="7.3" name="Moderate breeze"/>
+        <temperature unit="celsius" value="2"/>
+        <pressure unit="hPa" value="1034.8"/>
+      </time>
+      <time from="2015-12-31T00:00:00" to="2015-12-31T06:00:00" period="0">
+        <!--
+ Valid from 2015-12-31T00:00:00 to 2015-12-31T06:00:00 
+-->
+        <symbol number="1" numberEx="1" name="Clear sky" var="mf/01n.68"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-31T00:00:00  -->
+        <windDirection deg="160.8" code="SSE" name="South-southeast"/>
+        <windSpeed mps="5.3" name="Gentle breeze"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1032.8"/>
+      </time>
+      <time from="2015-12-31T06:00:00" to="2015-12-31T12:00:00" period="1">
+        <!--
+ Valid from 2015-12-31T06:00:00 to 2015-12-31T12:00:00 
+-->
+        <symbol number="1" numberEx="1" name="Clear sky" var="01d"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-31T06:00:00  -->
+        <windDirection deg="158.7" code="SSE" name="South-southeast"/>
+        <windSpeed mps="5.1" name="Gentle breeze"/>
+        <temperature unit="celsius" value="0"/>
+        <pressure unit="hPa" value="1029.2"/>
+      </time>
+      <time from="2015-12-31T12:00:00" to="2015-12-31T18:00:00" period="2">
+        <!--
+ Valid from 2015-12-31T12:00:00 to 2015-12-31T18:00:00 
+-->
+        <symbol number="2" numberEx="2" name="Fair" var="02d"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-31T12:00:00  -->
+        <windDirection deg="165.1" code="SSE" name="South-southeast"/>
+        <windSpeed mps="5.8" name="Moderate breeze"/>
+        <temperature unit="celsius" value="3"/>
+        <pressure unit="hPa" value="1027.2"/>
+      </time>
+      <time from="2015-12-31T18:00:00" to="2016-01-01T00:00:00" period="3">
+        <!--
+ Valid from 2015-12-31T18:00:00 to 2016-01-01T00:00:00 
+-->
+        <symbol number="3" numberEx="3" name="Partly cloudy" var="mf/03n.68"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2015-12-31T18:00:00  -->
+        <windDirection deg="159.4" code="SSE" name="South-southeast"/>
+        <windSpeed mps="5.4" name="Gentle breeze"/>
+        <temperature unit="celsius" value="2"/>
+        <pressure unit="hPa" value="1025.5"/>
+      </time>
+      <time from="2016-01-01T00:00:00" to="2016-01-01T06:00:00" period="0">
+        <!--
+ Valid from 2016-01-01T00:00:00 to 2016-01-01T06:00:00 
+-->
+        <symbol number="3" numberEx="3" name="Partly cloudy" var="mf/03n.71"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-01T00:00:00  -->
+        <windDirection deg="161.1" code="SSE" name="South-southeast"/>
+        <windSpeed mps="4.6" name="Gentle breeze"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1025.6"/>
+      </time>
+      <time from="2016-01-01T07:00:00" to="2016-01-01T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-01T07:00:00 to 2016-01-01T13:00:00 
+-->
+        <symbol number="3" numberEx="3" name="Partly cloudy" var="03d"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-01T07:00:00  -->
+        <windDirection deg="145.9" code="SE" name="Southeast"/>
+        <windSpeed mps="4.6" name="Gentle breeze"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1025.1"/>
+      </time>
+      <time from="2016-01-01T13:00:00" to="2016-01-01T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-01T13:00:00 to 2016-01-01T19:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-01T13:00:00  -->
+        <windDirection deg="148.2" code="SSE" name="South-southeast"/>
+        <windSpeed mps="4.5" name="Gentle breeze"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1027.0"/>
+      </time>
+      <time from="2016-01-01T19:00:00" to="2016-01-02T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-01T19:00:00 to 2016-01-02T01:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-01T19:00:00  -->
+        <windDirection deg="111.1" code="ESE" name="East-southeast"/>
+        <windSpeed mps="4.5" name="Gentle breeze"/>
+        <temperature unit="celsius" value="0"/>
+        <pressure unit="hPa" value="1028.9"/>
+      </time>
+      <time from="2016-01-02T01:00:00" to="2016-01-02T07:00:00" period="0">
+        <!--
+ Valid from 2016-01-02T01:00:00 to 2016-01-02T07:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-02T01:00:00  -->
+        <windDirection deg="101.7" code="ESE" name="East-southeast"/>
+        <windSpeed mps="4.8" name="Gentle breeze"/>
+        <temperature unit="celsius" value="-1"/>
+        <pressure unit="hPa" value="1031.0"/>
+      </time>
+      <time from="2016-01-02T07:00:00" to="2016-01-02T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-02T07:00:00 to 2016-01-02T13:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-02T07:00:00  -->
+        <windDirection deg="104.0" code="ESE" name="East-southeast"/>
+        <windSpeed mps="5.8" name="Moderate breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1032.3"/>
+      </time>
+      <time from="2016-01-02T13:00:00" to="2016-01-02T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-02T13:00:00 to 2016-01-02T19:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-02T13:00:00  -->
+        <windDirection deg="111.2" code="ESE" name="East-southeast"/>
+        <windSpeed mps="5.8" name="Moderate breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1033.8"/>
+      </time>
+      <time from="2016-01-02T19:00:00" to="2016-01-03T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-02T19:00:00 to 2016-01-03T01:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-02T19:00:00  -->
+        <windDirection deg="107.8" code="ESE" name="East-southeast"/>
+        <windSpeed mps="5.7" name="Moderate breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1034.2"/>
+      </time>
+      <time from="2016-01-03T01:00:00" to="2016-01-03T07:00:00" period="0">
+        <!--
+ Valid from 2016-01-03T01:00:00 to 2016-01-03T07:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-03T01:00:00  -->
+        <windDirection deg="100.1" code="E" name="East"/>
+        <windSpeed mps="4.0" name="Gentle breeze"/>
+        <temperature unit="celsius" value="-3"/>
+        <pressure unit="hPa" value="1033.7"/>
+      </time>
+      <time from="2016-01-03T07:00:00" to="2016-01-03T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-03T07:00:00 to 2016-01-03T13:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-03T07:00:00  -->
+        <windDirection deg="61.1" code="ENE" name="East-northeast"/>
+        <windSpeed mps="2.8" name="Light breeze"/>
+        <temperature unit="celsius" value="-3"/>
+        <pressure unit="hPa" value="1031.0"/>
+      </time>
+      <time from="2016-01-03T13:00:00" to="2016-01-03T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-03T13:00:00 to 2016-01-03T19:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-03T13:00:00  -->
+        <windDirection deg="331.0" code="NNW" name="North-northwest"/>
+        <windSpeed mps="2.7" name="Light breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1027.3"/>
+      </time>
+      <time from="2016-01-03T19:00:00" to="2016-01-04T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-03T19:00:00 to 2016-01-04T01:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-03T19:00:00  -->
+        <windDirection deg="344.1" code="NNW" name="North-northwest"/>
+        <windSpeed mps="2.7" name="Light breeze"/>
+        <temperature unit="celsius" value="-4"/>
+        <pressure unit="hPa" value="1022.2"/>
+      </time>
+      <time from="2016-01-04T01:00:00" to="2016-01-04T07:00:00" period="0">
+        <!--
+ Valid from 2016-01-04T01:00:00 to 2016-01-04T07:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-04T01:00:00  -->
+        <windDirection deg="313.2" code="NW" name="Northwest"/>
+        <windSpeed mps="1.4" name="Light air"/>
+        <temperature unit="celsius" value="-4"/>
+        <pressure unit="hPa" value="1018.2"/>
+      </time>
+      <time from="2016-01-04T07:00:00" to="2016-01-04T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-04T07:00:00 to 2016-01-04T13:00:00 
+-->
+        <symbol number="13" numberEx="13" name="Snow" var="13"/>
+        <precipitation value="1.0"/>
+        <!--  Valid at 2016-01-04T07:00:00  -->
+        <windDirection deg="25.1" code="NNE" name="North-northeast"/>
+        <windSpeed mps="0.2" name="Calm"/>
+        <temperature unit="celsius" value="-4"/>
+        <pressure unit="hPa" value="1014.9"/>
+      </time>
+      <time from="2016-01-04T13:00:00" to="2016-01-04T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-04T13:00:00 to 2016-01-04T19:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-04T13:00:00  -->
+        <windDirection deg="43.4" code="NE" name="Northeast"/>
+        <windSpeed mps="2.2" name="Light breeze"/>
+        <temperature unit="celsius" value="-3"/>
+        <pressure unit="hPa" value="1013.7"/>
+      </time>
+      <time from="2016-01-04T19:00:00" to="2016-01-05T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-04T19:00:00 to 2016-01-05T01:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-04T19:00:00  -->
+        <windDirection deg="132.5" code="SE" name="Southeast"/>
+        <windSpeed mps="2.7" name="Light breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1011.9"/>
+      </time>
+      <time from="2016-01-05T01:00:00" to="2016-01-05T07:00:00" period="0">
+        <!--
+ Valid from 2016-01-05T01:00:00 to 2016-01-05T07:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-05T01:00:00  -->
+        <windDirection deg="150.6" code="SSE" name="South-southeast"/>
+        <windSpeed mps="3.1" name="Light breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1009.9"/>
+      </time>
+      <time from="2016-01-05T07:00:00" to="2016-01-05T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-05T07:00:00 to 2016-01-05T13:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-05T07:00:00  -->
+        <windDirection deg="142.5" code="SE" name="Southeast"/>
+        <windSpeed mps="3.3" name="Light breeze"/>
+        <temperature unit="celsius" value="-2"/>
+        <pressure unit="hPa" value="1007.9"/>
+      </time>
+      <time from="2016-01-05T13:00:00" to="2016-01-05T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-05T13:00:00 to 2016-01-05T19:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-05T13:00:00  -->
+        <windDirection deg="139.7" code="SE" name="Southeast"/>
+        <windSpeed mps="3.3" name="Light breeze"/>
+        <temperature unit="celsius" value="-1"/>
+        <pressure unit="hPa" value="1007.3"/>
+      </time>
+      <time from="2016-01-05T19:00:00" to="2016-01-06T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-05T19:00:00 to 2016-01-06T01:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-05T19:00:00  -->
+        <windDirection deg="119.8" code="ESE" name="East-southeast"/>
+        <windSpeed mps="3.1" name="Light breeze"/>
+        <temperature unit="celsius" value="-1"/>
+        <pressure unit="hPa" value="1007.3"/>
+      </time>
+      <time from="2016-01-06T01:00:00" to="2016-01-06T07:00:00" period="0">
+        <!--
+ Valid from 2016-01-06T01:00:00 to 2016-01-06T07:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-06T01:00:00  -->
+        <windDirection deg="96.3" code="E" name="East"/>
+        <windSpeed mps="2.7" name="Light breeze"/>
+        <temperature unit="celsius" value="-1"/>
+        <pressure unit="hPa" value="1008.4"/>
+      </time>
+      <time from="2016-01-06T07:00:00" to="2016-01-06T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-06T07:00:00 to 2016-01-06T13:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-06T07:00:00  -->
+        <windDirection deg="102.3" code="ESE" name="East-southeast"/>
+        <windSpeed mps="3.1" name="Light breeze"/>
+        <temperature unit="celsius" value="-1"/>
+        <pressure unit="hPa" value="1009.6"/>
+      </time>
+      <time from="2016-01-06T13:00:00" to="2016-01-06T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-06T13:00:00 to 2016-01-06T19:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-06T13:00:00  -->
+        <windDirection deg="115.5" code="ESE" name="East-southeast"/>
+        <windSpeed mps="3.1" name="Light breeze"/>
+        <temperature unit="celsius" value="0"/>
+        <pressure unit="hPa" value="1010.4"/>
+      </time>
+      <time from="2016-01-06T19:00:00" to="2016-01-07T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-06T19:00:00 to 2016-01-07T01:00:00 
+-->
+        <symbol number="12" numberEx="47" name="Light sleet" var="47"/>
+        <precipitation value="0.9"/>
+        <!--  Valid at 2016-01-06T19:00:00  -->
+        <windDirection deg="105.1" code="ESE" name="East-southeast"/>
+        <windSpeed mps="3.4" name="Gentle breeze"/>
+        <temperature unit="celsius" value="0"/>
+        <pressure unit="hPa" value="1009.6"/>
+      </time>
+      <time from="2016-01-07T01:00:00" to="2016-01-07T07:00:00" period="0">
+        <!--
+ Valid from 2016-01-07T01:00:00 to 2016-01-07T07:00:00 
+-->
+        <symbol number="9" numberEx="9" name="Rain" var="09"/>
+        <precipitation value="3.0"/>
+        <!--  Valid at 2016-01-07T01:00:00  -->
+        <windDirection deg="145.6" code="SE" name="Southeast"/>
+        <windSpeed mps="3.8" name="Gentle breeze"/>
+        <temperature unit="celsius" value="1"/>
+        <pressure unit="hPa" value="1005.7"/>
+      </time>
+      <time from="2016-01-07T07:00:00" to="2016-01-07T13:00:00" period="1">
+        <!--
+ Valid from 2016-01-07T07:00:00 to 2016-01-07T13:00:00 
+-->
+        <symbol number="4" numberEx="4" name="Cloudy" var="04"/>
+        <precipitation value="0"/>
+        <!--  Valid at 2016-01-07T07:00:00  -->
+        <windDirection deg="178.3" code="S" name="South"/>
+        <windSpeed mps="5.5" name="Moderate breeze"/>
+        <temperature unit="celsius" value="2"/>
+        <pressure unit="hPa" value="1001.8"/>
+      </time>
+      <time from="2016-01-07T13:00:00" to="2016-01-07T19:00:00" period="2">
+        <!--
+ Valid from 2016-01-07T13:00:00 to 2016-01-07T19:00:00 
+-->
+        <symbol number="9" numberEx="46" name="Light rain" var="46"/>
+        <precipitation value="0.9"/>
+        <!--  Valid at 2016-01-07T13:00:00  -->
+        <windDirection deg="171.1" code="S" name="South"/>
+        <windSpeed mps="5.5" name="Moderate breeze"/>
+        <temperature unit="celsius" value="3"/>
+        <pressure unit="hPa" value="1000.0"/>
+      </time>
+      <time from="2016-01-07T19:00:00" to="2016-01-08T01:00:00" period="3">
+        <!--
+ Valid from 2016-01-07T19:00:00 to 2016-01-08T01:00:00 
+-->
+        <symbol number="9" numberEx="46" name="Light rain" var="46"/>
+        <precipitation value="0.9"/>
+        <!--  Valid at 2016-01-07T19:00:00  -->
+        <windDirection deg="180.8" code="S" name="South"/>
+        <windSpeed mps="5.5" name="Moderate breeze"/>
+        <temperature unit="celsius" value="3"/>
+        <pressure unit="hPa" value="999.4"/>
+      </time>
+    </tabular>
+  </forecast>
+</weatherdata>

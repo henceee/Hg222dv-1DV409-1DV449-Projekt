@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dv409_hg222dv_WeatherMashupModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="dv409_hg222dv_WeatherMashupModelStoreContainer">
+    <EntitySet Name="Location" EntityType="dv409_hg222dv_WeatherMashupModel.Store.Location" store:Type="Tables" Schema="appSchem" />
+    <EntitySet Name="Weather" EntityType="dv409_hg222dv_WeatherMashupModel.Store.Weather" store:Type="Tables" Schema="appSchem" />
+    <AssociationSet Name="FK_Weather_Location1" Association="dv409_hg222dv_WeatherMashupModel.Store.FK_Weather_Location1">
+      <End Role="Location" EntitySet="Location" />
+      <End Role="Weather" EntitySet="Weather" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Location">
+    <Key>
+      <PropertyRef Name="LocationID" />
+    </Key>
+    <Property Name="LocationID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Lat" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Long" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="CityName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Country" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Weather">
+    <Key>
+      <PropertyRef Name="WeatherID" />
+    </Key>
+    <Property Name="WeatherID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ForecastDate" Type="datetime" Nullable="false" />
+    <Property Name="Period" Type="int" Nullable="false" />
+    <Property Name="SymbolNumber" Type="int" Nullable="false" />
+    <Property Name="Percipitation" Type="float" Nullable="false" />
+    <Property Name="Temperature" Type="float" Nullable="false" />
+    <Property Name="TempUnit" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="NextUpdate" Type="datetime" Nullable="false" />
+    <Property Name="LocationID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Weather_Location1">
+    <End Role="Location" Type="dv409_hg222dv_WeatherMashupModel.Store.Location" Multiplicity="1" />
+    <End Role="Weather" Type="dv409_hg222dv_WeatherMashupModel.Store.Weather" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Location">
+        <PropertyRef Name="LocationID" />
+      </Principal>
+      <Dependent Role="Weather">
+        <PropertyRef Name="LocationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Location_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Location_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="Lat" Type="varchar" Mode="In" />
+    <Parameter Name="Long" Type="varchar" Mode="In" />
+    <Parameter Name="CityName" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Location_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="Lat" Type="varchar" Mode="In" />
+    <Parameter Name="Long" Type="varchar" Mode="In" />
+    <Parameter Name="CityName" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Weather_Delete" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="WeatherID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Weather_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="ForecastDate" Type="datetime" Mode="In" />
+    <Parameter Name="Period" Type="int" Mode="In" />
+    <Parameter Name="SymbolNumber" Type="int" Mode="In" />
+    <Parameter Name="Percipitation" Type="float" Mode="In" />
+    <Parameter Name="Temperature" Type="float" Mode="In" />
+    <Parameter Name="TempUnit" Type="varchar" Mode="In" />
+    <Parameter Name="NextUpdate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Weather_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="appSchem">
+    <Parameter Name="ForecastDate" Type="datetime" Mode="In" />
+    <Parameter Name="Period" Type="int" Mode="In" />
+    <Parameter Name="SymbolNumber" Type="int" Mode="In" />
+    <Parameter Name="Percipitation" Type="float" Mode="In" />
+    <Parameter Name="Temperature" Type="float" Mode="In" />
+    <Parameter Name="TempUnit" Type="varchar" Mode="In" />
+    <Parameter Name="NextUpdate" Type="datetime" Mode="In" />
+    <Parameter Name="LocationID" Type="int" Mode="In" />
+    <Parameter Name="WeatherID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+</Schema>
