@@ -58,8 +58,8 @@ namespace WeatherMashup.Controllers
                      }                     
                      //If locations isn't empty, it contains one location, so show it to user.
                      else if (model.HasLocations && model.Count ==1)
-                     {  
-                         return View("Index", model.Locations.First().LocationID);
+                     {
+                         return RedirectToAction("ShowWeather", "WeatherMashup", new { PositionID = model.Locations.First().LocationID });
                      }
                     //Otherwise there's no matches, show message to user
                     FlashMessage.Danger("No locations where found.");
@@ -98,7 +98,7 @@ namespace WeatherMashup.Controllers
             //something's gone wrong, catch and show to user.
             catch (Exception e)
             {
-
+                FlashMessage.Danger("Unable to find requested weather data.Please check your spelling."); 
             }
             return View("");
         }

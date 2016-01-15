@@ -32,7 +32,8 @@ namespace WeatherMashup.Domain.WebServices
                 //get the locations from the webservice and...
                 var locationWebService = new LocationWebService();
                 //Iterate through all locations, insert them and save the repository changes to db.
-                locationWebService.getLocationsByCityName(cityName).ToList().ForEach(l=>this._repository.InsertLocation(l));
+                locations = locationWebService.getLocationsByCityName(cityName);
+                locations.ToList().ForEach(l => this._repository.InsertLocation(l));
                 this._repository.Save();
             }
 
@@ -51,9 +52,10 @@ namespace WeatherMashup.Domain.WebServices
                 //Get the weather data from the weather webservice..
                 var weatherWebService = new WeatherWebService();
                 //Iterate through weather data, insert them and save the repository changes to db.
-                weatherWebService.getWeather(location).ToList().ForEach(w=>this._repository.InsertWeather(w));
+                weatherWebService.getWeather(location).ToList().ForEach(w => this._repository.InsertWeather(w));
                 this._repository.Save();
             }
+
 
             return location.Weather.ToList();
         }

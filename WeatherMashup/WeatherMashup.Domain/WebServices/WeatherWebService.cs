@@ -26,9 +26,7 @@ namespace WeatherMashup.Domain.WebServices
 
             var request = (HttpWebRequest)WebRequest.Create(uriString);
             request.Method = "GET";            
-            
-           try
-           {
+          
                 using (var response = request.GetResponse())
                 using (var reader = new StreamReader(response.GetResponseStream()))
                /* using (var reader = new StreamReader(HttpContext.Current.Server.MapPath
@@ -55,16 +53,7 @@ namespace WeatherMashup.Domain.WebServices
                                       TempUnit = time.Element("temperature").Attribute("unit").Value,  
                                   }).ToList();
                     }
-                
-
-            }                                
-                           
-            catch (Exception e)
-            {
-                
-                throw new ApplicationException("Internal error handling weather data.");
-            }            
-            
+                                                  
         }
     }
 }
