@@ -29,6 +29,7 @@ Projektet har varit svårt och medfört mycket motgångar men det har varit intr
 
 ## Länkar
 Observera: För att kunna ansluta, krävs anslutning till [VPN 200](https://github.com/1dv409/kursmaterial/raw/master/Laborationsuppgifter/konfigurera-vpn-anslutning-vpn200-lnu-se.pdf)
+
 [Applikationen](http://172.16.214.1/1dv409/hg222dv)
 
 [Källkod] (https://github.com/henceee/Hg222dv-1DV409-1DV449-Projekt)
