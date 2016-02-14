@@ -16,7 +16,7 @@ För att minska antalen anrop, kan servern ses som en proxy, där data lagras pe
 I enlighet med Souders rekommendationer[1] för prestandaoptimering, minifieras skriptfiler och stilmallar och slås samman i såkallade ”bundles” vid publicering, vilket innebär ett minskat antal HTTP-anrop. Stilmallar och skriptfiler laddas in i headern respektive längst ned i body taggen, vilket även rekommenderas, eftersom DOM:en (Document Object Model) och CSSOM (CSS Object Model) måste bägge vara laddade för att sedan eventuellt kunna manipuleras i Javascripten. All Javascript och CSS är även extern. Dock har inte GZIP använts, då det kändes överflödigt, och inte heller något Content Delivery Network (CDN) används, då det inte känns aktuellt med tanke på applikationens storlek.
 
 ## Offline-first
-Geno matt använda [nuGet RockOffline, by Gareth Rierd]( https://github.com/gareth-reid/RockOffline/tree/master/RockOfflinePackage), kan application cache tas I bruk genom att lägga till növändiga script som en “bundle”, lägga till ett manifest I en vy, samt registera detta manifest i route configen. Därmed bör en chache:ad version av sidan visas då användaren är offline.
+På grund av tekniska svårigheter, har jag valt att genom en extern javascript fil utföra så kallad "polling" mot servern, för att fastställa statusen på anslutningen. Ifall användaren inte är ansluten, görs upprepade försök att ansluta genom HTTP: GET. Användaren meddelas även att hen arbetar offline. Knappen för att göra nya sökningar blir även avaktiverad. 
  
 ##Riskanalys
 Naturligvis medför en tjänst som består av två externa tjänster i form av API:er en benägenhet att vara känslig för förändringar, såsom namn på konstanter, anrop till metoder och så vidare, vilket kan orsaka att kod ”förfaller” – blir inaktuell och slutar att fungera. Det medför även att ifall en tjänst upplever något internt fel, eller ligger nere, så kan hela tjänsten falla.
@@ -26,10 +26,8 @@ Då lagrade procedurer används, samt att ogiltiga id orsakar applikationsfel so
 ##Reflektioner
 Projektet har varit svårt och medfört mycket motgångar men det har varit intressant att jobba mot API:er i ASP.Net då det fortfande är nytt för mig. Dock orsakar Entity Framework ibland ett Optimistic Concurrency Exception – en bugg som jag inte vet vad det beror på. Mats sade att jag skulle testa att avlägsna min egna kod och försöka att lägga till ett objekt direkt jämtemot min WeatherMashupEntity, vilket jag gjorde och kunde göra slutsatsen att det inte är min kod som orsakar detta exception då det inte fungerade då heller. De lagrade procedurerna fungerar som de skall då jag kör dem i SQL Server, och att föra över koden till ett nytt projekt och lägga en ny modell från databasen fungerade inte heller. 
 
-
+Observera: För att kunna ansluta, krävs anslutning till VPN 200
 ## Länkar
-Observera: För att kunna ansluta, krävs anslutning till [VPN 200](https://github.com/1dv409/kursmaterial/raw/master/Laborationsuppgifter/konfigurera-vpn-anslutning-vpn200-lnu-se.pdf)
-
 [Applikationen](http://172.16.214.1/1dv409/hg222dv)
 
 [Källkod] (https://github.com/henceee/Hg222dv-1DV409-1DV449-Projekt)
